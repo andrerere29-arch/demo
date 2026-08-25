@@ -1,0 +1,2401 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>REPORTASESATU — Media Berita Online</title>
+
+    <meta name="description"
+          content="REPORTASESATU — Media berita online menyajikan informasi terkini, terpercaya dan berimbang.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+
+            theme: {
+                extend: {
+
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif']
+                    },
+
+                    colors: {
+                        primary: '#004741',
+                        primaryDark: '#00332F',
+                        cream: '#F8F8FF',
+                        creamDark: '#DDD8CB'
+                    }
+
+                }
+            }
+        }
+    </script>
+
+    <style>
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #F8F8FF;
+        }
+
+        /* =========================
+           SCROLLBAR
+        ========================= */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #F8F8FF;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #004741;
+            border-radius: 20px;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .main-header {
+            background: rgba(248, 248, 255, .96);
+            backdrop-filter: blur(15px);
+        }
+
+        .dark .main-header {
+            background: rgba(0, 51, 47, .96);
+        }
+
+        /* =========================
+           HEADLINE
+        ========================= */
+
+        .headline-overlay {
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0, 0, 0, .88),
+                    rgba(0, 0, 0, .35),
+                    transparent
+                );
+        }
+
+        /* =========================
+           NEWS CARD
+        ========================= */
+
+        .news-card {
+            transition: all .3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-card img {
+            transition: transform .5s ease;
+        }
+
+        .news-card:hover img {
+            transform: scale(1.06);
+        }
+
+        /* =========================
+           SECTION TITLE
+        ========================= */
+
+        .section-title {
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 3px;
+            bottom: 3px;
+            width: 5px;
+            background: #004741;
+            border-radius: 10px;
+        }
+
+        /* =========================
+           BREAKING
+        ========================= */
+
+        .breaking-dot {
+            animation: pulseDot 1.5s infinite;
+        }
+
+        @keyframes pulseDot {
+
+            0%, 100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: .3;
+            }
+
+        }
+
+        /* =========================
+           MOBILE MENU
+        ========================= */
+
+        .mobile-link {
+            display: block;
+            padding: 13px 15px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: .2s;
+        }
+
+        .mobile-link:hover {
+            background: #F8F8FF;
+            color: #004741;
+        }
+
+        .dark .mobile-link:hover {
+            background: #004741;
+            color: #F8F8FF;
+        }
+
+        /* =========================
+           SOCIAL
+        ========================= */
+
+        .social-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #F8F8FF;
+            color: #004741;
+            font-size: 13px;
+            font-weight: 800;
+            transition: .2s;
+        }
+
+        .social-btn:hover {
+            background: #004741;
+            color: #F8F8FF;
+        }
+
+        /* =========================
+           DARK MODE
+        ========================= */
+
+        .dark body {
+            background: #002F2B;
+        }
+
+        /* =========================
+           SEARCH
+        ========================= */
+
+        .search-modal {
+            backdrop-filter: blur(15px);
+        }
+
+        /* =========================
+           PLAY BUTTON
+        ========================= */
+
+        .play-button {
+            transition: .3s;
+        }
+
+        .video-card:hover .play-button {
+            transform: scale(1.12);
+        }
+
+    </style>
+
+</head>
+
+
+<body class="text-gray-900 dark:text-[#F8F8FF]">
+
+
+<!-- =========================================================
+     TOP BAR
+========================================================= -->
+
+<div class="bg-[#004741] text-[#F8F8FF] text-xs">
+
+    <div class="max-w-7xl mx-auto px-4">
+
+        <div class="h-9 flex items-center justify-between">
+
+            <div class="flex items-center gap-5">
+
+                <span>
+                    Selasa, 25 Agustus 2026
+                </span>
+
+                <span class="hidden md:block opacity-70">
+                    Media Berita Online Indonesia
+                </span>
+
+            </div>
+
+
+            <div class="hidden md:flex items-center gap-5">
+
+                <a href="#" class="hover:opacity-70">
+                    Facebook
+                </a>
+
+                <a href="#" class="hover:opacity-70">
+                    Instagram
+                </a>
+
+                <a href="#" class="hover:opacity-70">
+                    YouTube
+                </a>
+
+                <a href="#" class="hover:opacity-70">
+                    TikTok
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header
+    class="main-header sticky top-0 z-50 border-b border-[#004741]/10 dark:border-[#F8F8FF]/10">
+
+    <div class="max-w-7xl mx-auto px-4">
+
+        <div class="h-16 md:h-20 flex items-center justify-between">
+
+
+            <!-- LOGO -->
+
+            <a href="#" class="flex items-center">
+
+                <img
+                    src="logo.png"
+                    alt="REPORTASESATU"
+                    class="h-10 md:h-16 w-auto object-contain">
+
+            </a>
+
+
+            <!-- DESKTOP MENU -->
+
+            <nav
+                class="hidden xl:flex items-center gap-5
+                       text-sm font-bold">
+
+                <a href="#" class="menu-link">
+                    Home
+                </a>
+
+                <a href="#nasional" class="menu-link">
+                    Nasional
+                </a>
+
+                <a href="#daerah" class="menu-link">
+                    Daerah
+                </a>
+
+                <a href="#politik" class="menu-link">
+                    Politik
+                </a>
+
+                <a href="#ekonomi" class="menu-link">
+                    Ekonomi
+                </a>
+
+                <a href="#pendidikan" class="menu-link">
+                    Pendidikan
+                </a>
+
+                <a href="#teknologi" class="menu-link">
+                    Teknologi
+                </a>
+
+                <a href="#olahraga" class="menu-link">
+                    Olahraga
+                </a>
+
+                <a href="#lifestyle" class="menu-link">
+                    Lifestyle
+                </a>
+
+            </nav>
+
+
+            <!-- ACTION -->
+
+            <div class="flex items-center gap-2">
+
+
+                <button
+                    onclick="openSearch()"
+                    class="action-btn">
+
+                    🔍
+
+                </button>
+
+
+                <button
+                    onclick="toggleDarkMode()"
+                    class="action-btn">
+
+                    🌙
+
+                </button>
+
+
+                <button
+                    onclick="openMobileMenu()"
+                    class="action-btn xl:hidden">
+
+                    ☰
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     BREAKING NEWS
+========================================================= -->
+
+<div class="bg-[#004741] text-[#F8F8FF]">
+
+    <div class="max-w-7xl mx-auto px-4">
+
+        <div class="min-h-11 py-2 flex items-center">
+
+            <div
+                class="font-black text-xs uppercase tracking-wider
+                       mr-3 sm:mr-5 whitespace-nowrap">
+
+                <span class="breaking-dot">
+                    ●
+                </span>
+
+                BREAKING NEWS
+
+            </div>
+
+            <div class="border-l border-[#F8F8FF]/30 pl-3 sm:pl-5 overflow-hidden">
+
+                <div class="text-xs sm:text-sm truncate">
+
+                    Pemerintah terus mendorong transformasi digital
+                    dan peningkatan kualitas pelayanan publik.
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="max-w-7xl mx-auto px-4 py-6 md:py-8">
+
+
+<!-- =========================================================
+     HEADLINE
+========================================================= -->
+
+<section
+    id="nasional"
+    class="grid lg:grid-cols-3 gap-5">
+
+
+    <!-- MAIN HEADLINE -->
+
+    <article
+        class="lg:col-span-2 relative
+               h-80 sm:h-[480px]
+               rounded-2xl sm:rounded-3xl
+               overflow-hidden
+               cursor-pointer
+               group">
+
+        <img
+            src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1400&q=85"
+            alt="Berita utama"
+            class="absolute inset-0 w-full h-full object-cover
+                   group-hover:scale-105 transition duration-700">
+
+
+        <div
+            class="absolute inset-0 headline-overlay">
+        </div>
+
+
+        <div
+            class="absolute bottom-0 left-0 right-0
+                   p-5 md:p-9 text-white">
+
+
+            <span
+                class="inline-block
+                       bg-[#004741]
+                       text-[#F8F8FF]
+                       px-2.5 py-1
+                       rounded-md
+                       text-[10px] sm:text-xs font-black uppercase">
+
+                Nasional
+
+            </span>
+
+
+            <h1
+                class="text-xl sm:text-3xl md:text-5xl
+                       font-black
+                       leading-tight
+                       mt-2 sm:mt-4">
+
+                Perkembangan Indonesia Hari Ini
+                Menjadi Perhatian Nasional
+
+            </h1>
+
+
+            <p
+                class="hidden sm:block text-gray-200
+                       mt-4
+                       max-w-2xl">
+
+                Informasi terbaru dan terpercaya dari
+                berbagai penjuru Indonesia.
+
+            </p>
+
+
+            <div
+                class="text-[10px] sm:text-xs text-gray-300 mt-2 sm:mt-5">
+
+                25 Agustus 2026 • 18:45 WIB
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+    <!-- SIDE HEADLINE -->
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-5">
+
+
+        <article
+            class="relative h-48 sm:h-[227px]
+                   rounded-2xl sm:rounded-3xl overflow-hidden
+                   group cursor-pointer">
+
+            <img
+                src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=900&q=85"
+                class="absolute inset-0 w-full h-full object-cover
+                       group-hover:scale-105 transition duration-700">
+
+            <div class="absolute inset-0 headline-overlay"></div>
+
+            <div class="absolute bottom-0 p-4 sm:p-5 text-white">
+
+                <span
+                    class="text-[10px] font-black
+                           bg-[#004741]
+                           px-2 py-1 rounded">
+
+                    POLITIK
+
+                </span>
+
+                <h2
+                    class="font-bold text-base sm:text-xl mt-2 leading-snug">
+
+                    Dinamika Politik Nasional
+                    Terus Berkembang
+
+                </h2>
+
+            </div>
+
+        </article>
+
+
+        <article
+            class="relative h-48 sm:h-[227px]
+                   rounded-2xl sm:rounded-3xl overflow-hidden
+                   group cursor-pointer">
+
+            <img
+                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85"
+                class="absolute inset-0 w-full h-full object-cover
+                       group-hover:scale-105 transition duration-700">
+
+            <div class="absolute inset-0 headline-overlay"></div>
+
+            <div class="absolute bottom-0 p-4 sm:p-5 text-white">
+
+                <span
+                    class="text-[10px] font-black
+                           bg-[#004741]
+                           px-2 py-1 rounded">
+
+                    EKONOMI
+
+                </span>
+
+                <h2
+                    class="font-bold text-base sm:text-xl mt-2 leading-snug">
+
+                    Ekonomi Digital Membuka
+                    Peluang Baru
+
+                </h2>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     BERITA TERKINI
+========================================================= -->
+
+<section class="mt-10 sm:mt-14">
+
+
+    <div class="flex items-center justify-between mb-5 sm:mb-7">
+
+        <h2
+            class="section-title
+                   text-xl sm:text-2xl font-black">
+
+            Berita Terkini
+
+        </h2>
+
+        <a
+            href="#"
+            class="text-[#004741]
+                   dark:text-[#F8F8FF]
+                   text-xs sm:text-sm font-bold">
+
+            Lihat Semua →
+
+        </a>
+
+    </div>
+
+
+    <div class="grid lg:grid-cols-3 gap-8">
+
+
+        <!-- LIST -->
+
+        <div class="lg:col-span-2 space-y-5 sm:space-y-7">
+
+
+            <!-- ARTICLE 1 -->
+
+            <article
+                class="news-card flex flex-col sm:flex-row gap-4 sm:gap-5
+                       pb-5 sm:pb-7
+                       border-b border-black/10
+                       dark:border-white/10">
+
+
+                <div
+                    class="w-full sm:w-56
+                           h-48 sm:h-36
+                           rounded-2xl
+                           overflow-hidden
+                           flex-shrink-0">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=700&q=85"
+                        class="w-full h-full object-cover">
+
+                </div>
+
+
+                <div class="flex-1">
+
+                    <span
+                        class="text-[#004741]
+                               dark:text-[#F8F8FF]
+                               text-xs font-black uppercase">
+
+                        Nasional
+
+                    </span>
+
+
+                    <h3
+                        class="text-base sm:text-xl
+                               font-bold
+                               mt-1 sm:mt-2
+                               leading-snug">
+
+                        Pemerintah Perkuat Program
+                        Pembangunan Nasional
+
+                    </h3>
+
+
+                    <p
+                        class="hidden md:block
+                               text-sm text-gray-500
+                               dark:text-gray-400
+                               mt-2">
+
+                        Berbagai program strategis terus dilakukan
+                        untuk meningkatkan kesejahteraan masyarakat.
+
+                    </p>
+
+
+                    <div
+                        class="text-[10px] sm:text-xs text-gray-400 mt-2 sm:mt-3">
+
+                        25 Agustus 2026 • 16:30 WIB
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- ARTICLE 2 -->
+
+            <article
+                class="news-card flex flex-col sm:flex-row gap-4 sm:gap-5
+                       pb-5 sm:pb-7
+                       border-b border-black/10
+                       dark:border-white/10">
+
+
+                <div
+                    class="w-full sm:w-56
+                           h-48 sm:h-36
+                           rounded-2xl
+                           overflow-hidden
+                           flex-shrink-0">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=700&q=85"
+                        class="w-full h-full object-cover">
+
+                </div>
+
+
+                <div class="flex-1">
+
+                    <span
+                        class="text-[#004741]
+                               dark:text-[#F8F8FF]
+                               text-xs font-black uppercase">
+
+                        Pendidikan
+
+                    </span>
+
+
+                    <h3
+                        class="text-base sm:text-xl
+                               font-bold
+                               mt-1 sm:mt-2
+                               leading-snug">
+
+                        Pendidikan Indonesia Terus
+                        Beradaptasi dengan Era Digital
+
+                    </h3>
+
+
+                    <p
+                        class="hidden md:block
+                               text-sm text-gray-500
+                               dark:text-gray-400
+                               mt-2">
+
+                        Transformasi pembelajaran menjadi salah satu
+                        fokus utama dalam peningkatan mutu pendidikan.
+
+                    </p>
+
+
+                    <div
+                        class="text-[10px] sm:text-xs text-gray-400 mt-2 sm:mt-3">
+
+                        25 Agustus 2026 • 15:20 WIB
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- ARTICLE 3 -->
+
+            <article
+                class="news-card flex flex-col sm:flex-row gap-4 sm:gap-5
+                       pb-5 sm:pb-7
+                       border-b border-black/10
+                       dark:border-white/10">
+
+
+                <div
+                    class="w-full sm:w-56
+                           h-48 sm:h-36
+                           rounded-2xl
+                           overflow-hidden
+                           flex-shrink-0">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=85"
+                        class="w-full h-full object-cover">
+
+                </div>
+
+
+                <div class="flex-1">
+
+                    <span
+                        class="text-[#004741]
+                               dark:text-[#F8F8FF]
+                               text-xs font-black uppercase">
+
+                        Daerah
+
+                    </span>
+
+
+                    <h3
+                        class="text-base sm:text-xl
+                               font-bold
+                               mt-1 sm:mt-2
+                               leading-snug">
+
+                        Berita Daerah:
+                        Aktivitas Masyarakat Kembali Menggeliat
+
+                    </h3>
+
+
+                    <p
+                        class="hidden md:block
+                               text-sm text-gray-500
+                               dark:text-gray-400
+                               mt-2">
+
+                        Perkembangan terbaru dari berbagai daerah
+                        di Indonesia.
+
+                    </p>
+
+
+                    <div
+                        class="text-[10px] sm:text-xs text-gray-400 mt-2 sm:mt-3">
+
+                        25 Agustus 2026 • 14:10 WIB
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- ARTICLE 4 -->
+
+            <article
+                class="news-card flex flex-col sm:flex-row gap-4 sm:gap-5">
+
+
+                <div
+                    class="w-full sm:w-56
+                           h-48 sm:h-36
+                           rounded-2xl
+                           overflow-hidden
+                           flex-shrink-0">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=85"
+                        class="w-full h-full object-cover">
+
+                </div>
+
+
+                <div class="flex-1">
+
+                    <span
+                        class="text-[#004741]
+                               dark:text-[#F8F8FF]
+                               text-xs font-black uppercase">
+
+                        Teknologi
+
+                    </span>
+
+
+                    <h3
+                        class="text-base sm:text-xl
+                               font-bold
+                               mt-1 sm:mt-2
+                               leading-snug">
+
+                        Teknologi Digital Mengubah
+                        Cara Masyarakat Mendapatkan Informasi
+
+                    </h3>
+
+
+                    <p
+                        class="hidden md:block
+                               text-sm text-gray-500
+                               dark:text-gray-400
+                               mt-2">
+
+                        Perkembangan teknologi memberikan dampak
+                        besar terhadap kehidupan masyarakat.
+
+                    </p>
+
+
+                    <div
+                        class="text-[10px] sm:text-xs text-gray-400 mt-2 sm:mt-3">
+
+                        25 Agustus 2026 • 13:45 WIB
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <!-- SIDEBAR -->
+
+        <aside>
+
+
+            <div
+                class="bg-white
+                       dark:bg-[#003B36]
+                       rounded-2xl sm:rounded-3xl
+                       p-5 sm:p-6
+                       shadow-sm">
+
+
+                <h3
+                    class="section-title
+                           text-lg sm:text-xl font-black mb-6">
+
+                    Terpopuler
+
+                </h3>
+
+
+                <div class="space-y-6">
+
+
+                    <div class="flex gap-4">
+
+                        <div
+                            class="text-3xl sm:text-4xl font-black
+                                   text-[#004741]/20
+                                   dark:text-[#F8F8FF]/20">
+
+                            01
+
+                        </div>
+
+                        <div>
+
+                            <span
+                                class="text-[10px]
+                                       font-black
+                                       text-[#004741]
+                                       dark:text-[#F8F8FF]">
+
+                                NASIONAL
+
+                            </span>
+
+                            <h4
+                                class="font-bold text-sm sm:text-base mt-1 leading-snug">
+
+                                Berita Nasional Paling
+                                Banyak Dibaca Hari Ini
+
+                            </h4>
+
+                            <div
+                                class="text-xs text-gray-400 mt-1">
+
+                                125K views
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex gap-4">
+
+                        <div
+                            class="text-3xl sm:text-4xl font-black
+                                   text-[#004741]/20
+                                   dark:text-[#F8F8FF]/20">
+
+                            02
+
+                        </div>
+
+                        <div>
+
+                            <span
+                                class="text-[10px]
+                                       font-black
+                                       text-[#004741]
+                                       dark:text-[#F8F8FF]">
+
+                                DAERAH
+
+                            </span>
+
+                            <h4
+                                class="font-bold text-sm sm:text-base mt-1 leading-snug">
+
+                                Informasi Daerah
+                                Menjadi Sorotan Publik
+
+                            </h4>
+
+                            <div
+                                class="text-xs text-gray-400 mt-1">
+
+                                98K views
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex gap-4">
+
+                        <div
+                            class="text-3xl sm:text-4xl font-black
+                                   text-[#004741]/20
+                                   dark:text-[#F8F8FF]/20">
+
+                            03
+
+                        </div>
+
+                        <div>
+
+                            <span
+                                class="text-[10px]
+                                       font-black
+                                       text-[#004741]
+                                       dark:text-[#F8F8FF]">
+
+                                EKONOMI
+
+                            </span>
+
+                            <h4
+                                class="font-bold text-sm sm:text-base mt-1 leading-snug">
+
+                                Perkembangan Ekonomi
+                                Digital Indonesia
+
+                            </h4>
+
+                            <div
+                                class="text-xs text-gray-400 mt-1">
+
+                                84K views
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="flex gap-4">
+
+                        <div
+                            class="text-3xl sm:text-4xl font-black
+                                   text-[#004741]/20
+                                   dark:text-[#F8F8FF]/20">
+
+                            04
+
+                        </div>
+
+                        <div>
+
+                            <span
+                                class="text-[10px]
+                                       font-black
+                                       text-[#004741]
+                                       dark:text-[#F8F8FF]">
+
+                                PENDIDIKAN
+
+                            </span>
+
+                            <h4
+                                class="font-bold text-sm sm:text-base mt-1 leading-snug">
+
+                                Transformasi Pendidikan
+                                Menjadi Perhatian
+
+                            </h4>
+
+                            <div
+                                class="text-xs text-gray-400 mt-1">
+
+                                71K views
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- AD -->
+
+            <div
+                class="mt-6
+                       h-48 sm:h-60
+                       rounded-2xl sm:rounded-3xl
+                       border-2 border-dashed
+                       border-[#004741]/20
+                       dark:border-[#F8F8FF]/20
+                       flex items-center
+                       justify-center
+                       text-[#004741]/50
+                       dark:text-[#F8F8FF]/50
+                       text-sm font-bold">
+
+                SPACE IKLAN
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     BERITA DAERAH
+========================================================= -->
+
+<section id="daerah" class="mt-12 sm:mt-16">
+
+
+    <div class="flex items-center justify-between mb-5 sm:mb-7">
+
+        <h2 class="section-title text-xl sm:text-2xl font-black">
+            Berita Daerah
+        </h2>
+
+        <a href="#"
+           class="text-[#004741] dark:text-[#F8F8FF]
+                  text-xs sm:text-sm font-bold">
+
+            Selengkapnya →
+
+        </a>
+
+    </div>
+
+
+    <div class="grid md:grid-cols-3 gap-5 sm:gap-7">
+
+
+        <article class="news-card">
+
+            <div
+                class="h-48 sm:h-56 rounded-2xl sm:rounded-3xl overflow-hidden">
+
+                <img
+                    src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=800&q=85"
+                    class="w-full h-full object-cover">
+
+            </div>
+
+            <span
+                class="block
+                       text-[#004741]
+                       dark:text-[#F8F8FF]
+                       text-xs font-black mt-3 sm:mt-4">
+
+                ACEH
+
+            </span>
+
+            <h3 class="font-bold text-base sm:text-xl mt-1 leading-snug">
+
+                Aktivitas Pemerintahan Daerah
+                Terus Berjalan
+
+            </h3>
+
+            <p
+                class="text-xs sm:text-sm text-gray-500
+                       dark:text-gray-400 mt-1 sm:mt-2">
+
+                Informasi terkini seputar perkembangan daerah.
+
+            </p>
+
+        </article>
+
+
+        <article class="news-card">
+
+            <div
+                class="h-48 sm:h-56 rounded-2xl sm:rounded-3xl overflow-hidden">
+
+                <img
+                    src="https://images.unsplash.com/photo-1444723121867-7a241cacace9?auto=format&fit=crop&w=800&q=85"
+                    class="w-full h-full object-cover">
+
+            </div>
+
+            <span
+                class="block
+                       text-[#004741]
+                       dark:text-[#F8F8FF]
+                       text-xs font-black mt-3 sm:mt-4">
+
+                SUMATERA
+
+            </span>
+
+            <h3 class="font-bold text-base sm:text-xl mt-1 leading-snug">
+
+                Potensi Daerah Menjadi
+                Perhatian Investor
+
+            </h3>
+
+            <p
+                class="text-xs sm:text-sm text-gray-500
+                       dark:text-gray-400 mt-1 sm:mt-2">
+
+                Potensi ekonomi dan pariwisata terus dikembangkan.
+
+            </p>
+
+        </article>
+
+
+        <article class="news-card">
+
+            <div
+                class="h-48 sm:h-56 rounded-2xl sm:rounded-3xl overflow-hidden">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=85"
+                    class="w-full h-full object-cover">
+
+            </div>
+
+            <span
+                class="block
+                       text-[#004741]
+                       dark:text-[#F8F8FF]
+                       text-xs font-black mt-3 sm:mt-4">
+
+                MASYARAKAT
+
+            </span>
+
+            <h3 class="font-bold text-base sm:text-xl mt-1 leading-snug">
+
+                Masyarakat Dorong Pengembangan
+                Ekonomi Lokal
+
+            </h3>
+
+            <p
+                class="text-xs sm:text-sm text-gray-500
+                       dark:text-gray-400 mt-1 sm:mt-2">
+
+                Berbagai inovasi masyarakat mulai berkembang.
+
+            </p>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     KATEGORI
+========================================================= -->
+
+<section
+    id="politik"
+    class="mt-12 sm:mt-16">
+
+
+    <div class="grid lg:grid-cols-3 gap-5 sm:gap-7">
+
+
+        <!-- POLITIK -->
+
+        <div>
+
+            <h2
+                class="section-title
+                       text-lg sm:text-xl font-black mb-4 sm:mb-5">
+
+                Politik
+
+            </h2>
+
+
+            <div class="bg-white dark:bg-[#003B36]
+                        rounded-2xl sm:rounded-3xl overflow-hidden">
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=800&q=85"
+                    class="w-full h-40 sm:h-48 object-cover">
+
+
+                <div class="p-4 sm:p-5">
+
+                    <h3 class="font-bold text-base sm:text-lg">
+
+                        Perkembangan Politik
+                        Nasional Terbaru
+
+                    </h3>
+
+                    <p
+                        class="text-xs sm:text-sm text-gray-500
+                               dark:text-gray-400 mt-1 sm:mt-2">
+
+                        Berita dan informasi politik terkini.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- EKONOMI -->
+
+        <div id="ekonomi">
+
+            <h2
+                class="section-title
+                       text-lg sm:text-xl font-black mb-4 sm:mb-5">
+
+                Ekonomi
+
+            </h2>
+
+
+            <div class="bg-white dark:bg-[#003B36]
+                        rounded-2xl sm:rounded-3xl overflow-hidden">
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=85"
+                    class="w-full h-40 sm:h-48 object-cover">
+
+
+                <div class="p-4 sm:p-5">
+
+                    <h3 class="font-bold text-base sm:text-lg">
+
+                        Peluang Ekonomi Digital
+                        Terus Berkembang
+
+                    </h3>
+
+                    <p
+                        class="text-xs sm:text-sm text-gray-500
+                               dark:text-gray-400 mt-1 sm:mt-2">
+
+                        Informasi ekonomi dan bisnis terkini.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PENDIDIKAN -->
+
+        <div id="pendidikan">
+
+            <h2
+                class="section-title
+                       text-lg sm:text-xl font-black mb-4 sm:mb-5">
+
+                Pendidikan
+
+            </h2>
+
+
+            <div class="bg-white dark:bg-[#003B36]
+                        rounded-2xl sm:rounded-3xl overflow-hidden">
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=800&q=85"
+                    class="w-full h-40 sm:h-48 object-cover">
+
+
+                <div class="p-4 sm:p-5">
+
+                    <h3 class="font-bold text-base sm:text-lg">
+
+                        Pendidikan Menjadi
+                        Investasi Masa Depan
+
+                    </h3>
+
+                    <p
+                        class="text-xs sm:text-sm text-gray-500
+                               dark:text-gray-400 mt-1 sm:mt-2">
+
+                        Informasi pendidikan terbaru.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     VIDEO
+========================================================= -->
+
+<section id="video" class="mt-12 sm:mt-16">
+
+
+    <div class="flex justify-between items-center mb-5 sm:mb-7">
+
+        <h2
+            class="section-title
+                   text-xl sm:text-2xl font-black">
+
+            Video
+
+        </h2>
+
+        <a
+            href="#"
+            class="text-[#004741]
+                   dark:text-[#F8F8FF]
+                   text-xs sm:text-sm font-bold">
+
+            Semua Video →
+
+        </a>
+
+    </div>
+
+
+    <div class="grid md:grid-cols-3 gap-5 sm:gap-7">
+
+
+        <article
+            class="video-card
+                   relative
+                   h-48 sm:h-64
+                   rounded-2xl sm:rounded-3xl
+                   overflow-hidden
+                   group cursor-pointer">
+
+
+            <img
+                src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=900&q=85"
+                class="w-full h-full object-cover
+                       group-hover:scale-105 transition duration-700">
+
+
+            <div
+                class="absolute inset-0 bg-black/50">
+            </div>
+
+
+            <div
+                class="absolute inset-0
+                       flex items-center
+                       justify-center">
+
+                <div
+                    class="play-button
+                           w-12 sm:w-16 h-12 sm:h-16
+                           rounded-full
+                           bg-[#004741]
+                           text-[#F8F8FF]
+                           flex items-center
+                           justify-center
+                           text-base sm:text-xl">
+
+                    ▶
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="absolute bottom-0
+                       left-0 right-0
+                       p-4 sm:p-5 text-white">
+
+                <h3 class="font-bold text-sm sm:text-base">
+
+                    Video Berita Terkini Hari Ini
+
+                </h3>
+
+            </div>
+
+        </article>
+
+
+        <article
+            class="video-card
+                   relative
+                   h-48 sm:h-64
+                   rounded-2xl sm:rounded-3xl
+                   overflow-hidden
+                   group cursor-pointer">
+
+
+            <img
+                src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=900&q=85"
+                class="w-full h-full object-cover
+                       group-hover:scale-105 transition duration-700">
+
+
+            <div class="absolute inset-0 bg-black/50"></div>
+
+
+            <div
+                class="absolute inset-0
+                       flex items-center
+                       justify-center">
+
+                <div
+                    class="play-button
+                           w-12 sm:w-16 h-12 sm:h-16
+                           rounded-full
+                           bg-[#004741]
+                           text-[#F8F8FF]
+                           flex items-center
+                           justify-center
+                           text-base sm:text-xl">
+
+                    ▶
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="absolute bottom-0
+                       left-0 right-0
+                       p-4 sm:p-5 text-white">
+
+                <h3 class="font-bold text-sm sm:text-base">
+
+                    Wawancara Eksklusif REPORTASESATU
+
+                </h3>
+
+            </div>
+
+        </article>
+
+
+        <article
+            class="video-card
+                   relative
+                   h-48 sm:h-64
+                   rounded-2xl sm:rounded-3xl
+                   overflow-hidden
+                   group cursor-pointer">
+
+
+            <img
+                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=85"
+                class="w-full h-full object-cover
+                       group-hover:scale-105 transition duration-700">
+
+
+            <div class="absolute inset-0 bg-black/50"></div>
+
+
+            <div
+                class="absolute inset-0
+                       flex items-center
+                       justify-center">
+
+                <div
+                    class="play-button
+                           w-12 sm:w-16 h-12 sm:h-16
+                           rounded-full
+                           bg-[#004741]
+                           text-[#F8F8FF]
+                           flex items-center
+                           justify-center
+                           text-base sm:text-xl">
+
+                    ▶
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="absolute bottom-0
+                       left-0 right-0
+                       p-4 sm:p-5 text-white">
+
+                <h3 class="font-bold text-sm sm:text-base">
+
+                    Peristiwa yang Menjadi Sorotan
+
+                </h3>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     NEWSLETTER
+========================================================= -->
+
+<section class="mt-12 sm:mt-16">
+
+
+    <div
+        class="rounded-2xl sm:rounded-[2rem]
+               bg-[#004741]
+               text-[#F8F8FF]
+               p-6 sm:p-12">
+
+
+        <div
+            class="max-w-3xl
+                   mx-auto
+                   text-center">
+
+
+            <div
+                class="text-[10px] sm:text-xs
+                       font-black
+                       tracking-[3px] sm:tracking-[4px]
+                       uppercase">
+
+                REPORTASESATU
+
+            </div>
+
+
+            <h2
+                class="text-2xl sm:text-4xl
+                       font-black mt-2 sm:mt-3">
+
+                Jangan Lewatkan Berita Terbaru
+
+            </h2>
+
+
+            <p
+                class="mt-2 sm:mt-4
+                       text-xs sm:text-base
+                       text-[#F8F8FF]/70">
+
+                Dapatkan berita terbaru langsung
+                ke email Anda.
+
+            </p>
+
+
+            <form
+                onsubmit="subscribe(event)"
+                class="mt-5 sm:mt-7
+                       flex flex-col sm:flex-row
+                       gap-3">
+
+
+                <input
+                    id="emailInput"
+                    type="email"
+                    required
+                    placeholder="Masukkan email Anda"
+                    class="flex-1
+                           px-4 sm:px-5 py-3 sm:py-4
+                           rounded-xl
+                           bg-[#F8F8FF]
+                           text-[#004741]
+                           text-sm
+                           outline-none">
+
+
+                <button
+                    type="submit"
+                    class="px-6 sm:px-7 py-3 sm:py-4
+                           rounded-xl
+                           bg-[#F8F8FF]
+                           text-[#004741]
+                           text-sm sm:text-base
+                           font-black
+                           hover:bg-white">
+
+                    BERLANGGANAN
+
+                </button>
+
+            </form>
+
+
+            <div
+                id="subscribeMessage"
+                class="text-xs sm:text-sm mt-4 hidden">
+
+                Terima kasih telah berlangganan!
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer
+    class="bg-[#004741]
+           text-[#F8F8FF]
+           mt-12 sm:mt-20">
+
+
+    <div
+        class="max-w-7xl
+               mx-auto
+               px-4
+               py-10 sm:py-14">
+
+
+        <div
+            class="grid md:grid-cols-4
+                   gap-8 sm:gap-10">
+
+
+            <!-- BRAND -->
+
+            <div class="md:col-span-2">
+
+
+                <div
+                    class="text-2xl sm:text-3xl
+                           font-black">
+
+                    REPORTASE<span class="opacity-70">
+                        SATU
+                    </span>
+
+                </div>
+
+
+                <p
+                    class="text-xs sm:text-sm
+                           text-[#F8F8FF]/70
+                           mt-3 sm:mt-5
+                           max-w-xl
+                           leading-relaxed">
+
+                    REPORTASESATU merupakan media berita
+                    online yang menyajikan informasi aktual,
+                    terpercaya dan berimbang dari berbagai
+                    penjuru Indonesia.
+
+                </p>
+
+
+                <div
+                    class="flex gap-3 mt-5 sm:mt-7">
+
+
+                    <a href="#" class="social-btn">
+                        f
+                    </a>
+
+                    <a href="#" class="social-btn">
+                        ig
+                    </a>
+
+                    <a href="#" class="social-btn">
+                        yt
+                    </a>
+
+                    <a href="#" class="social-btn">
+                        t
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- KANAL -->
+
+            <div>
+
+                <h3 class="font-black text-base sm:text-lg mb-3 sm:mb-5">
+                    Kanal
+                </h3>
+
+
+                <div
+                    class="space-y-2.5 sm:space-y-3
+                           text-xs sm:text-sm
+                           text-[#F8F8FF]/70">
+
+                    <a href="#" class="block hover:text-white">
+                        Nasional
+                    </a>
+
+                    <a href="#" class="block hover:text-white">
+                        Daerah
+                    </a>
+
+                    <a href="#" class="block hover:text-white">
+                        Politik
+                    </a>
+
+                    <a href="#" class="block hover:text-white">
+                        Ekonomi
+                    </a>
+
+                    <a href="#" class="block hover:text-white">
+                        Pendidikan
+                    </a>
+
+                    <a href="#" class="block hover:text-white">
+                        Teknologi
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PERUSAHAAN -->
+
+            <div>
+
+                <h3 class="font-black text-base sm:text-lg mb-3 sm:mb-5">
+                    Perusahaan
+                </h3>
+
+
+                <div
+                    class="space-y-2.5 sm:space-y-3
+                           text-xs sm:text-sm
+                           text-[#F8F8FF]/70">
+
+                    <a href="#" class="block hover:text-white">
+                        Tentang Kami
+                    </a>
+
+                    <a href="#" class="block hover:text-white">
+                        Redaksi
+                    </a>
+
+                    <a href="#" class="block hover:text-white">
+                        Pedoman Media Siber
+                    </a>
+
+                    <a href="#" class="block hover:text-white">
+                        Kontak
+                    </a>
+
+                    <a href="#" class="block hover:text-white">
+                        Karier
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div
+            class="border-t
+                   border-[#F8F8FF]/15
+                   mt-8 sm:mt-12
+                   pt-6
+                   flex flex-col
+                   md:flex-row
+                   justify-between
+                   gap-3
+                   text-xs sm:text-sm
+                   text-[#F8F8FF]/50">
+
+
+            <div>
+                © 2026 REPORTASESATU.
+                All Rights Reserved.
+            </div>
+
+
+            <div>
+                Media Berita Online Indonesia
+            </div>
+
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     MOBILE MENU
+========================================================= -->
+
+<div
+    id="mobileMenu"
+    class="hidden fixed inset-0 z-[80] bg-black/60">
+
+
+    <div
+        class="absolute
+               right-0 top-0
+               h-full
+               w-72 sm:w-80
+               bg-[#F8F8FF]
+               dark:bg-[#00332F]
+               p-6 overflow-y-auto">
+
+
+        <div
+            class="flex
+                   justify-between
+                   items-center
+                   mb-8">
+
+
+            <div class="flex items-center gap-2 font-black text-lg">
+
+                <img
+                    src="logo.png"
+                    alt="REPORTASESATU"
+                    class="h-8 w-auto object-contain">
+
+                REPORTASESATU
+
+            </div>
+
+
+            <button
+                onclick="openMobileMenu()"
+                class="text-3xl">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <nav class="space-y-1">
+
+
+            <a href="#" class="mobile-link">
+                Home
+            </a>
+
+            <a href="#nasional" class="mobile-link">
+                Nasional
+            </a>
+
+            <a href="#daerah" class="mobile-link">
+                Daerah
+            </a>
+
+            <a href="#politik" class="mobile-link">
+                Politik
+            </a>
+
+            <a href="#ekonomi" class="mobile-link">
+                Ekonomi
+            </a>
+
+            <a href="#pendidikan" class="mobile-link">
+                Pendidikan
+            </a>
+
+            <a href="#teknologi" class="mobile-link">
+                Teknologi
+            </a>
+
+            <a href="#video" class="mobile-link">
+                Video
+            </a>
+
+        </nav>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     SEARCH MODAL
+========================================================= -->
+
+<div
+    id="searchModal"
+    class="hidden fixed inset-0 z-[100]
+           bg-black/70 search-modal">
+
+
+    <div
+        class="max-w-2xl
+               mx-auto
+               mt-16 sm:mt-28
+               px-4">
+
+
+        <div
+            class="bg-[#F8F8FF]
+                   dark:bg-[#00332F]
+                   rounded-2xl sm:rounded-3xl
+                   p-5 sm:p-6">
+
+
+            <div
+                class="flex
+                       justify-between
+                       items-center
+                       mb-4 sm:mb-5">
+
+
+                <h2 class="text-lg sm:text-xl font-black">
+
+                    Cari Berita
+
+                </h2>
+
+
+                <button
+                    onclick="closeSearch()"
+                    class="text-2xl">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+            <div class="flex flex-col sm:flex-row gap-2">
+
+
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Cari berita..."
+                    class="flex-1
+                           px-4 py-2.5 sm:py-3
+                           rounded-xl
+                           border
+                           border-[#004741]/20
+                           bg-transparent
+                           text-sm
+                           outline-none">
+
+
+                <button
+                    onclick="searchNews()"
+                    class="px-6 py-2.5 sm:py-0
+                           rounded-xl
+                           bg-[#004741]
+                           text-[#F8F8FF]
+                           text-sm
+                           font-bold">
+
+                    Cari
+
+                </button>
+
+            </div>
+
+
+            <div
+                id="searchResult"
+                class="mt-4 sm:mt-5
+                       text-sm
+                       opacity-70">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* ==========================
+   DARK MODE
+========================== */
+
+function toggleDarkMode() {
+
+    document.documentElement.classList.toggle('dark');
+
+    const enabled =
+        document.documentElement.classList.contains('dark');
+
+    localStorage.setItem(
+        'reportasesatuDarkMode',
+        enabled
+    );
+
+}
+
+
+if (
+    localStorage.getItem('reportasesatuDarkMode') === 'true'
+) {
+
+    document.documentElement.classList.add('dark');
+
+}
+
+
+/* ==========================
+   MOBILE MENU
+========================== */
+
+function openMobileMenu() {
+
+    const menu =
+        document.getElementById('mobileMenu');
+
+    menu.classList.toggle('hidden');
+
+}
+
+
+/* ==========================
+   SEARCH
+========================== */
+
+function openSearch() {
+
+    document
+        .getElementById('searchModal')
+        .classList.remove('hidden');
+
+    document
+        .getElementById('searchInput')
+        .focus();
+
+}
+
+
+function closeSearch() {
+
+    document
+        .getElementById('searchModal')
+        .classList.add('hidden');
+
+}
+
+
+function searchNews() {
+
+    const keyword =
+        document
+            .getElementById('searchInput')
+            .value
+            .trim();
+
+    const result =
+        document.getElementById('searchResult');
+
+
+    if (!keyword) {
+
+        result.innerHTML =
+            'Silakan masukkan kata kunci berita.';
+
+        return;
+
+    }
+
+
+    result.innerHTML =
+
+        `Hasil pencarian untuk:
+         <strong>${keyword}</strong>`;
+
+}
+
+
+/* ==========================
+   NEWSLETTER
+========================== */
+
+function subscribe(event) {
+
+    event.preventDefault();
+
+    const message =
+        document.getElementById(
+            'subscribeMessage'
+        );
+
+    message.classList.remove('hidden');
+
+    document.getElementById(
+        'emailInput'
+    ).value = '';
+
+}
+
+
+/* ==========================
+   ESC
+========================== */
+
+document.addEventListener(
+    'keydown',
+    function(event) {
+
+        if (event.key === 'Escape') {
+
+            closeSearch();
+
+        }
+
+    }
+);
+
+
+/* ==========================
+   CLOSE MOBILE MENU
+========================== */
+
+document
+    .querySelectorAll('.mobile-link')
+    .forEach(function(link) {
+
+        link.addEventListener(
+            'click',
+            function() {
+
+                document
+                    .getElementById('mobileMenu')
+                    .classList.add('hidden');
+
+            }
+        );
+
+    });
+
+
+</script>
+
+
+<style>
+
+.menu-link {
+
+    color: #004741;
+    transition: .2s;
+
+}
+
+.dark .menu-link {
+
+    color: #F8F8FF;
+
+}
+
+.menu-link:hover {
+
+    opacity: .6;
+
+}
+
+
+.action-btn {
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: .2s;
+
+    color: #004741;
+
+}
+
+@media (min-width: 640px) {
+    .action-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+    }
+}
+
+.dark .action-btn {
+
+    color: #F8F8FF;
+
+}
+
+.action-btn:hover {
+
+    background: rgba(0, 71, 65, .10);
+
+}
+
+.dark .action-btn:hover {
+
+    background: rgba(248, 248, 255, .10);
+
+}
+
+</style>
+
+
+</body>
+</html>
