@@ -2,2398 +2,2269 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
-    <title>Legalitas.ID — Mengawal Fakta Menjaga Kebenaran</title>
-
-    <meta name="description"
-          content="Legalitas.ID — Mengawal Fakta Menjaga Kebenaran.">
+    <title>Legalitas.ID - Mengawal Fakta, Menjaga Kebenaran</title>
+    <meta name="description" content="Legalitas.ID - Mengawal Fakta, Menjaga Kebenaran">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-          rel="stylesheet">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-
-            theme: {
-                extend: {
-
-                    fontFamily: {
-                        inter: ['Inter', 'sans-serif']
-                    },
-
-                    colors: {
-                        primary: '#B91C1C',
-                        primaryDark: '#7F1D1D',
-                        cream: '#F8F8FF',
-                        creamDark: '#DDD8CB'
-                    }
-
-                }
-            }
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            --accent: #d4af37;
+            --navy-dark: #0a1128;
+            --navy-mid: #101c40;
+            --navy-light: #1d2d50;
+            --gold: #b89728;
+            --gold-light: #f3e5ab;
+            --gray-light: #f4f4f6;
+            --gray-text: #4b5563;
+            --white: #ffffff;
+            --glass: linear-gradient(145deg, rgba(255, 255, 255, 0.96) 0%, rgba(240, 243, 248, 0.94) 100%);
+            --border: rgba(184, 151, 40, 0.3);
+            --shadow: 0 20px 40px rgba(10, 17, 40, 0.08);
+        }
 
         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: #F8F8FF;
+            font-family: "Inter", sans-serif;
+            background:
+                radial-gradient(circle at 85% 10%, rgba(184, 151, 40, 0.06), transparent 45%),
+                radial-gradient(circle at 15% 40%, rgba(29, 45, 80, 0.04), transparent 50%),
+                #ffffff;
+            background-attachment: fixed;
+            color: var(--navy-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        button,
+        input {
+            font-family: inherit;
         }
 
         /* =========================
-           SCROLLBAR
-        ========================= */
+           GLASS
+        ========================== */
 
-        ::-webkit-scrollbar {
-            width: 8px;
+        .glass {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: var(--shadow);
         }
 
-        ::-webkit-scrollbar-track {
-            background: #F8F8FF;
+        /* =========================
+           CONTAINER
+        ========================== */
+
+        .container {
+            width: min(1200px, calc(100% - 40px));
+            margin: auto;
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: #B91C1C;
-            border-radius: 20px;
+        /* =========================
+           AD SPACE / RUANG IKLAN
+        ========================== */
+
+        .ad-wrapper {
+            margin: 22px auto 0;
+        }
+
+        .ad-box {
+            position: relative;
+            border-radius: 14px;
+            padding: 8px 10px;
+            background: linear-gradient(145deg, #f8fafc, #edf2f7);
+            border: 1px dashed rgba(184, 151, 40, 0.45);
+            overflow: hidden;
+            transition: .3s;
+        }
+
+        .ad-box:hover {
+            border-color: var(--gold);
+        }
+
+        .ad-badge {
+            display: block;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        .ad-link {
+            display: block;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ad-link img {
+            width: 100%;
+            object-fit: cover;
+            transition: transform .4s ease;
+        }
+
+        .ad-box:hover .ad-link img {
+            transform: scale(1.015);
+        }
+
+        .ad-leaderboard img {
+            height: 115px;
+        }
+
+        .ad-infeed img {
+            height: 100px;
+        }
+
+        .ad-sidebar img {
+            height: 260px;
+        }
+
+        /* =========================
+           TOP BAR
+        ========================== */
+
+        .topbar {
+            background: linear-gradient(90deg, #102B46 0%, #ffffff 50%, #ffffff 100%);
+            color: var(--navy-dark);
+            border-bottom: 1px solid rgba(184, 151, 40, 0.25);
+            font-size: 13px;
+        }
+
+        .topbar-inner {
+            min-height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .breaking-mini {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            color: #f0e90a;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        @keyframes blinkEffect {
+            0% { opacity: 1; }
+            50% { opacity: 0.2; }
+            100% { opacity: 1; }
+        }
+
+        .breaking-mini span {
+            color: #ff4d4d;
+            font-weight: 900;
+            animation: blinkEffect 1.2s infinite ease-in-out;
+            text-shadow: 0 0 6px rgba(220, 38, 38, 0.4);
+            flex-shrink: 0;
+        }
+
+        .top-social {
+            display: flex;
+            gap: 14px;
+            color: var(--navy-dark);
+            font-weight: 600;
+        }
+
+        .top-social a:hover {
+            color: var(--gold);
         }
 
         /* =========================
            HEADER
-        ========================= */
+        ========================== */
 
-        .main-header {
-            background: rgba(248, 248, 255, .96);
-            backdrop-filter: blur(15px);
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 2px solid var(--border);
+            box-shadow: 0 4px 20px rgba(10, 17, 40, 0.06);
         }
 
-        .dark .main-header {
-            background: rgba(17, 17, 17, .96);
+        .navbar {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
         }
 
-        /* =========================
-           HEADLINE
-        ========================= */
+        /* LOGO */
 
-        .headline-overlay {
-            background:
-                linear-gradient(
-                    to top,
-                    rgba(0, 0, 0, .88),
-                    rgba(0, 0, 0, .35),
-                    transparent
-                );
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            flex-shrink: 0;
         }
 
-        /* =========================
-           NEWS CARD
-        ========================= */
-
-        .news-card {
-            transition: all .3s ease;
+        .logo-img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
         }
 
-        .news-card:hover {
-            transform: translateY(-5px);
+        .logo-text {
+            line-height: 1.05;
         }
 
-        .news-card img {
-            transition: transform .5s ease;
+        .logo-text strong {
+            display: block;
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: -0.8px;
+            color: var(--navy-dark);
         }
 
-        .news-card:hover img {
-            transform: scale(1.06);
+        .logo-text span {
+            display: block;
+            margin-top: 3px;
+            font-size: 9px;
+            color: var(--gold);
+            letter-spacing: 1.5px;
+            font-weight: 700;
         }
 
-        /* =========================
-           SECTION TITLE
-        ========================= */
+        /* DESKTOP MENU */
 
-        .section-title {
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-menu a {
             position: relative;
-            padding-left: 15px;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 14px;
+            color: var(--navy-dark);
+            font-weight: 600;
+            transition: .3s;
         }
 
-        .section-title::before {
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--white);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-light) 100%);
+        }
+
+        .nav-menu a.active::after {
             content: "";
             position: absolute;
-            left: 0;
-            top: 3px;
-            bottom: 3px;
-            width: 5px;
-            background: #B91C1C;
+            bottom: 4px;
+            left: 14px;
+            width: 18px;
+            height: 2px;
             border-radius: 10px;
+            background: var(--gold);
         }
 
-        /* =========================
-           BREAKING
-        ========================= */
-
-        .breaking-dot {
-            animation: pulseDot 1.5s infinite;
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        @keyframes pulseDot {
-
-            0%, 100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: .3;
-            }
-
-        }
-
-        /* =========================
-           MOBILE MENU
-        ========================= */
-
-        .mobile-link {
-            display: block;
-            padding: 13px 15px;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: .2s;
-        }
-
-        .mobile-link:hover {
-            background: #F8F8FF;
-            color: #B91C1C;
-        }
-
-        .dark .mobile-link:hover {
-            background: #B91C1C;
-            color: #F8F8FF;
-        }
-
-        /* =========================
-           SOCIAL
-        ========================= */
-
-        .social-btn {
-            width: 38px;
-            height: 38px;
-            border-radius: 10px;
+        .search-btn,
+        .menu-btn {
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #F8F8FF;
-            color: #B91C1C;
-            font-size: 13px;
-            font-weight: 800;
-            transition: .2s;
+            border-radius: 11px;
+            border: 1px solid var(--border);
+            background: #f8fafc;
+            color: var(--navy-dark);
+            cursor: pointer;
+            transition: .3s;
+            font-size: 16px;
         }
 
-        .social-btn:hover {
-            background: #B91C1C;
-            color: #F8F8FF;
+        .search-btn:hover,
+        .menu-btn:hover {
+            border-color: var(--navy-dark);
+            background: var(--navy-dark);
+            color: var(--white);
         }
 
-        /* =========================
-           DARK MODE
-        ========================= */
+        .menu-btn {
+            display: none;
+        }
 
-        .dark body {
-            background: #0A0A0A;
+        /* MOBILE QUICK SCROLL NAV (Khusus Smartphone/Tablet) */
+        .mobile-quick-nav {
+            display: none;
+            overflow-x: auto;
+            white-space: nowrap;
+            gap: 8px;
+            padding: 8px 0 10px;
+            border-top: 1px solid rgba(184, 151, 40, 0.18);
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .mobile-quick-nav::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .mobile-quick-nav a {
+            display: inline-block;
+            padding: 6px 13px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            background: #f1f5f9;
+            color: var(--navy-dark);
+            border: 1px solid rgba(184, 151, 40, 0.25);
+            transition: .25s;
+        }
+
+        .mobile-quick-nav a.active,
+        .mobile-quick-nav a:active {
+            background: var(--navy-dark);
+            color: var(--gold-light);
+            border-color: var(--navy-dark);
         }
 
         /* =========================
            SEARCH
-        ========================= */
+        ========================== */
 
-        .search-modal {
-            backdrop-filter: blur(15px);
+        .search-box {
+            display: none;
+            padding: 12px 0 16px;
+            border-top: 1px solid rgba(184, 151, 40, 0.2);
+        }
+
+        .search-box.show {
+            display: block;
+        }
+
+        .search-inner {
+            position: relative;
+        }
+
+        .search-inner input {
+            width: 100%;
+            padding: 13px 48px 13px 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            outline: none;
+            background: #f8fafc;
+            color: var(--navy-dark);
+            font-size: 14px;
+        }
+
+        .search-inner input::placeholder {
+            color: #94a3b8;
+        }
+
+        .search-inner button {
+            position: absolute;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            border: 0;
+            border-radius: 9px;
+            background: var(--navy-dark);
+            color: var(--white);
+            cursor: pointer;
         }
 
         /* =========================
-           PLAY BUTTON
-        ========================= */
+           HERO
+        ========================== */
 
-        .play-button {
+        .hero {
+            padding: 32px 0 20px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.65fr 1fr;
+            gap: 20px;
+        }
+
+        .hero-main {
+            position: relative;
+            min-height: 480px;
+            border-radius: 22px;
+            overflow: hidden;
+            isolation: isolate;
+            border: 1px solid var(--border);
+            background: var(--navy-dark);
+            display: block;
+        }
+
+        .hero-main::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(10, 17, 40, 0.05) 0%,
+                    rgba(5, 9, 20, 0.45) 45%,
+                    rgba(5, 9, 20, 0.94) 100%
+                );
+            z-index: 1;
+        }
+
+        .hero-main img {
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .7s ease;
+        }
+
+        .hero-main:hover img {
+            transform: scale(1.04);
+        }
+
+        .hero-content {
+            position: absolute;
+            z-index: 3;
+            left: 30px;
+            right: 30px;
+            bottom: 28px;
+        }
+
+        .category {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 10px;
+            border-radius: 7px;
+            background: var(--navy-dark);
+            color: var(--gold-light);
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+            border: 1px solid rgba(184, 151, 40, 0.4);
+        }
+
+        .hero-content h1 {
+            margin-top: 11px;
+            max-width: 780px;
+            font-size: clamp(24px, 3.8vw, 44px);
+            line-height: 1.15;
+            letter-spacing: -1px;
+            font-weight: 900;
+            color: #ffffff;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin-top: 12px;
+            color: #e2e8f0;
+            font-size: 12px;
+        }
+
+        /* SIDE HERO */
+
+        .side-news {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .side-card {
+            position: relative;
+            min-height: 230px;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: var(--navy-dark);
+            display: block;
+        }
+
+        .side-card img {
+            height: 100%;
+            object-fit: cover;
+            transition: .6s;
+        }
+
+        .side-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .side-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                transparent 15%,
+                rgba(5, 9, 20, 0.9)
+            );
+        }
+
+        .side-card-content {
+            position: absolute;
+            left: 18px;
+            right: 18px;
+            bottom: 16px;
+            z-index: 2;
+        }
+
+        .side-card h3 {
+            margin-top: 8px;
+            font-size: 18px;
+            line-height: 1.25;
+            color: #ffffff;
+        }
+
+        .side-card-meta {
+            margin-top: 7px;
+            font-size: 11px;
+            color: #cbd5e1;
+        }
+
+        /* =========================
+           TRENDING
+        ========================== */
+
+        .trending {
+            margin: 18px 0 8px;
+        }
+
+        .trending-box {
+            border-radius: 14px;
+            overflow: hidden;
+            background: #f8fafc;
+            border: 1px solid var(--border);
+        }
+
+        .trending-inner {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 11px 16px;
+        }
+
+        .trending-label {
+            background: var(--navy-dark);
+            color: var(--gold-light);
+            border-radius: 6px;
+            padding: 5px 9px;
+            font-size: 10px;
+            font-weight: 900;
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .trending-item {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--navy-dark);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* =========================
+           SECTION
+        ========================== */
+
+        .section {
+            padding: 30px 0;
+        }
+
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+            gap: 12px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title .line {
+            width: 4px;
+            height: 24px;
+            border-radius: 10px;
+            background: linear-gradient(180deg, var(--navy-dark) 0%, var(--gold) 100%);
+        }
+
+        .section-title h2 {
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: -.6px;
+            color: var(--navy-dark);
+        }
+
+        .section-head a {
+            font-size: 12px;
+            color: var(--navy-dark);
+            font-weight: 600;
+            background: #f1f5f9;
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: .3s;
+            white-space: nowrap;
+        }
+
+        .section-head a:hover {
+            background: var(--navy-dark);
+            color: var(--white);
+            border-color: var(--navy-dark);
+        }
+
+        /* =========================
+           LAYOUT CONTENT
+        ========================== */
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1.55fr .75fr;
+            gap: 28px;
+            align-items: start;
+        }
+
+        /* =========================
+           NEWS CARD
+        ========================== */
+
+        .news-list {
+            display: grid;
+            gap: 16px;
+        }
+
+        .news-card {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 18px;
+            padding: 12px;
+            border-radius: 16px;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            transition: .3s;
+            box-shadow: 0 4px 15px rgba(10, 17, 40, 0.04);
+            align-items: center;
+        }
+
+        .news-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--navy-dark);
+            box-shadow: 0 10px 25px rgba(10, 17, 40, 0.08);
+        }
+
+        .news-image {
+            height: 150px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .news-image img {
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .news-card:hover .news-image img {
+            transform: scale(1.06);
+        }
+
+        .news-info {
+            padding: 2px 4px;
+            min-width: 0;
+        }
+
+        .news-info .category-light {
+            background: #f1f5f9;
+            color: var(--navy-dark);
+            border: 1px solid var(--border);
+        }
+
+        .news-info h3 {
+            margin-top: 8px;
+            font-size: 19px;
+            line-height: 1.3;
+            color: var(--navy-dark);
+            font-weight: 800;
+        }
+
+        .news-info p {
+            margin-top: 8px;
+            color: var(--gray-text);
+            font-size: 13px;
+            line-height: 1.55;
+        }
+
+        .news-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 11px;
+            color: #64748b;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        /* =========================
+           SIDEBAR
+        ========================== */
+
+        .sidebar {
+            display: grid;
+            gap: 18px;
+        }
+
+        .widget {
+            padding: 18px;
+            border-radius: 16px;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 15px rgba(10, 17, 40, 0.04);
+        }
+
+        .widget-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .widget-title span {
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(180deg, var(--navy-dark) 0%, var(--gold) 100%);
+            border-radius: 10px;
+        }
+
+        .widget-title h3 {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--navy-dark);
+        }
+
+        /* POPULAR */
+
+        .widget.popular-widget {
+            background: linear-gradient(
+                135deg,
+                var(--navy-dark) 0%,
+                var(--navy-mid) 100%
+            );
+            border: 1px solid var(--gold);
+            box-shadow: 0 15px 35px rgba(10, 17, 40, 0.12);
+            color: #ffffff;
+        }
+
+        .widget.popular-widget .widget-title span {
+            background: linear-gradient(180deg, var(--gold) 0%, var(--gold-light) 100%);
+        }
+
+        .widget.popular-widget .widget-title h3 {
+            color: var(--gold-light);
+        }
+
+        .popular-list {
+            display: grid;
+            gap: 13px;
+        }
+
+        .popular-item {
+            display: grid;
+            grid-template-columns: 36px 1fr;
+            gap: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(184, 151, 40, 0.25);
+            align-items: center;
+        }
+
+        .popular-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .popular-number {
+            width: 36px;
+            height: 36px;
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--navy-light);
+            border: 1px solid rgba(184, 151, 40, 0.4);
+            color: var(--gold-light);
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        .popular-item h4 {
+            font-size: 13px;
+            line-height: 1.4;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .popular-item small {
+            display: block;
+            margin-top: 3px;
+            color: #cbd5e1;
+            font-size: 11px;
+        }
+
+        /* CATEGORY */
+
+        .category-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .category-list a {
+            padding: 8px 12px;
+            border-radius: 9px;
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            font-size: 12px;
+            color: var(--navy-dark);
+            font-weight: 600;
             transition: .3s;
         }
 
-        .video-card:hover .play-button {
-            transform: scale(1.12);
+        .category-list a:hover {
+            border-color: var(--navy-dark);
+            background: var(--navy-dark);
+            color: var(--white);
         }
 
-    </style>
+        /* =========================
+           NEWSLETTER CTA
+        ========================== */
 
+        .newsletter {
+            padding: 20px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-mid) 100%);
+            border: 1px solid var(--gold);
+            box-shadow: 0 15px 35px rgba(10, 17, 40, 0.12);
+            color: #ffffff;
+        }
+
+        .newsletter h3 {
+            font-size: 19px;
+            line-height: 1.25;
+            font-weight: 900;
+            color: var(--gold-light);
+        }
+
+        .newsletter p {
+            margin-top: 8px;
+            color: #cbd5e1;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            min-width: 0;
+            padding: 12px;
+            background: #ffffff;
+            border: 1px solid var(--gold);
+            color: var(--navy-dark);
+            outline: none;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+
+        .newsletter-form input::placeholder {
+            color: #94a3b8;
+        }
+
+        .newsletter-form button {
+            border: 0;
+            padding: 0 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            background: var(--gold);
+            color: var(--navy-dark);
+            font-weight: 800;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        /* =========================
+           VIDEO & DAERAH GRID
+        ========================== */
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .video-card {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            transition: transform .3s ease, border-color .3s ease;
+            box-shadow: 0 4px 15px rgba(10, 17, 40, 0.04);
+        }
+
+        .video-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--navy-dark);
+        }
+
+        .video-thumb {
+            height: 160px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-thumb img {
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .video-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .video-thumb.is-video::after {
+            content: "▶";
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10, 17, 40, 0.9);
+            border: 1px solid var(--gold);
+            color: var(--gold-light);
+            font-size: 13px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        .video-content {
+            padding: 13px 14px;
+        }
+
+        .video-content h3 {
+            font-size: 15px;
+            line-height: 1.38;
+            color: var(--navy-dark);
+            font-weight: 700;
+        }
+
+        .video-content small {
+            display: block;
+            margin-top: 6px;
+            color: #64748b;
+            font-size: 11px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            margin-top: 35px;
+            background: linear-gradient(180deg, var(--navy-dark) 0%, #03050a 100%);
+            border-top: 1px solid rgba(184, 151, 40, 0.3);
+            color: #ffffff;
+        }
+
+        .footer-main {
+            padding: 45px 0;
+            display: grid;
+            grid-template-columns: 1.35fr 1fr 1fr 1fr;
+            gap: 32px;
+        }
+
+        .footer-brand p {
+            margin-top: 14px;
+            max-width: 340px;
+            color: #94a3b8;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .footer-title {
+            margin-bottom: 12px;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--gold-light);
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links {
+            display: grid;
+            gap: 9px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .footer-bottom {
+            padding: 18px 0;
+            border-top: 1px solid rgba(184, 151, 40, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #94a3b8;
+            font-size: 12px;
+        }
+
+        /* =========================
+           MOBILE NAV DRAWER
+        ========================== */
+
+        .mobile-menu {
+            display: none;
+            padding: 8px 0 16px;
+        }
+
+        .mobile-menu-inner {
+            padding: 10px;
+            border-radius: 14px;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            box-shadow: 0 12px 30px rgba(10, 17, 40, 0.12);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 11px 12px;
+            border-radius: 9px;
+            color: var(--navy-dark);
+            font-size: 13px;
+            font-weight: 600;
+            background: #f8fafc;
+        }
+
+        .mobile-menu a:hover,
+        .mobile-menu a.active {
+            background: var(--navy-dark);
+            color: var(--gold-light);
+        }
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+        /* BACK TO TOP BUTTON */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 18px;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: var(--navy-dark);
+            color: var(--gold-light);
+            border: 1px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(10, 17, 40, 0.25);
+            opacity: 0;
+            visibility: hidden;
+            transition: .3s;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* =========================
+           RESPONSIVE TABLET & MOBILE
+        ========================== */
+
+        @media (max-width: 1050px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .menu-btn {
+                display: flex;
+            }
+
+            .mobile-quick-nav {
+                display: flex;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .side-news {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 220px;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .newsletter {
+                grid-column: span 2;
+            }
+
+            .footer-main {
+                grid-template-columns: 1.5fr 1fr 1fr;
+            }
+        }
+
+        /* =========================
+           OPTIMASI SMARTPHONE (< 760px)
+        ========================== */
+        @media (max-width: 760px) {
+            .container {
+                width: calc(100% - 28px);
+            }
+
+            /* Topbar solid gelap agar teks terbaca jelas di HP */
+            .topbar {
+                background: var(--navy-dark);
+                color: #ffffff;
+                font-size: 11px;
+            }
+
+            .topbar-inner {
+                min-height: 32px;
+            }
+
+            .breaking-mini {
+                color: #f8fafc;
+            }
+
+            .top-social {
+                display: none;
+            }
+
+            /* Header & Logo */
+            .navbar {
+                min-height: 62px;
+            }
+
+            .logo {
+                gap: 9px;
+            }
+
+            .logo-img {
+                height: 32px;
+            }
+
+            .logo-text strong {
+                font-size: 18px;
+                letter-spacing: -0.5px;
+            }
+
+            .logo-text span {
+                font-size: 7.5px;
+                letter-spacing: 1px;
+                margin-top: 2px;
+            }
+
+            .search-btn,
+            .menu-btn {
+                width: 38px;
+                height: 38px;
+                border-radius: 10px;
+            }
+
+            /* Hero Utama */
+            .hero {
+                padding: 14px 0 12px;
+            }
+
+            .hero-grid {
+                gap: 12px;
+            }
+
+            .hero-main {
+                min-height: 320px;
+                border-radius: 16px;
+            }
+
+            .hero-content {
+                left: 16px;
+                right: 16px;
+                bottom: 16px;
+            }
+
+            .hero-content h1 {
+                font-size: 21px;
+                line-height: 1.25;
+                letter-spacing: -0.4px;
+                margin-top: 8px;
+            }
+
+            .hero-meta {
+                margin-top: 10px;
+                font-size: 11px;
+                gap: 7px;
+            }
+
+            /* Side News jadi Kartu Horizontal Rapi di HP */
+            .side-news {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                gap: 10px;
+            }
+
+            .side-card {
+                min-height: auto;
+                display: grid;
+                grid-template-columns: 110px 1fr;
+                background: #ffffff;
+                border-radius: 14px;
+                padding: 9px;
+                gap: 12px;
+                align-items: center;
+                box-shadow: 0 3px 10px rgba(10, 17, 40, 0.04);
+            }
+
+            .side-card::after {
+                display: none;
+            }
+
+            .side-card img {
+                height: 85px;
+                border-radius: 10px;
+            }
+
+            .side-card-content {
+                position: static;
+                padding: 0;
+            }
+
+            .side-card-content .category {
+                background: #f1f5f9;
+                color: var(--navy-dark);
+                font-size: 9px;
+                padding: 3px 7px;
+            }
+
+            .side-card h3 {
+                color: var(--navy-dark);
+                font-size: 14px;
+                line-height: 1.32;
+                margin-top: 5px;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .side-card-meta {
+                color: #64748b;
+                font-size: 10px;
+                margin-top: 5px;
+            }
+
+            /* Trending Bar */
+            .trending {
+                margin: 12px 0 6px;
+            }
+
+            .trending-box {
+                border-radius: 12px;
+            }
+
+            .trending-inner {
+                padding: 9px 12px;
+                gap: 10px;
+            }
+
+            .trending-label {
+                font-size: 9px;
+                padding: 4px 8px;
+            }
+
+            .trending-item {
+                font-size: 12px;
+            }
+
+            /* Section Header */
+            .section {
+                padding: 22px 0;
+            }
+
+            .section-head {
+                margin-bottom: 14px;
+            }
+
+            .section-title .line {
+                height: 20px;
+            }
+
+            .section-title h2 {
+                font-size: 18px;
+            }
+
+            .section-head a {
+                font-size: 11px;
+                padding: 5px 10px;
+            }
+
+            /* News List Card */
+            .news-list {
+                gap: 12px;
+            }
+
+            .news-card {
+                grid-template-columns: 112px 1fr;
+                gap: 12px;
+                padding: 10px;
+                border-radius: 14px;
+            }
+
+            .news-image {
+                height: 98px;
+                border-radius: 10px;
+            }
+
+            .news-info {
+                padding: 0;
+            }
+
+            .news-info .category {
+                font-size: 9px;
+                padding: 3px 7px;
+            }
+
+            .news-info h3 {
+                font-size: 14.5px;
+                line-height: 1.32;
+                margin-top: 5px;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .news-info p {
+                display: none;
+            }
+
+            .news-meta {
+                margin-top: 7px;
+                font-size: 10px;
+                gap: 6px;
+            }
+
+            /* Iklan di Smartphone */
+            .ad-infeed img {
+                height: 75px;
+            }
+
+            .ad-leaderboard img {
+                height: 85px;
+            }
+
+            .ad-sidebar img {
+                height: 220px;
+            }
+
+            /* Sidebar */
+            .sidebar {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .newsletter {
+                grid-column: auto;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form button {
+                padding: 12px;
+                width: 100%;
+            }
+
+            /* Video & Daerah Grid di Smartphone */
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .video-card {
+                display: grid;
+                grid-template-columns: 125px 1fr;
+                align-items: center;
+                padding: 9px;
+                gap: 12px;
+                border-radius: 14px;
+            }
+
+            .video-thumb {
+                height: 88px;
+                border-radius: 10px;
+            }
+
+            .video-thumb.is-video::after {
+                width: 32px;
+                height: 32px;
+                font-size: 11px;
+            }
+
+            .video-content {
+                padding: 0;
+            }
+
+            .video-content h3 {
+                font-size: 14px;
+                line-height: 1.32;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .video-content small {
+                margin-top: 5px;
+                font-size: 10px;
+            }
+
+            /* Footer Smartphone */
+            footer {
+                margin-top: 25px;
+            }
+
+            .footer-main {
+                padding: 32px 0;
+                grid-template-columns: 1fr 1fr;
+                gap: 24px 16px;
+            }
+
+            .footer-brand {
+                grid-column: span 2;
+            }
+
+            .footer-brand .logo-text span {
+                display: block;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 6px;
+                text-align: center;
+                font-size: 11px;
+            }
+        }
+
+        /* Layar Sangat Kecil (< 380px) */
+        @media (max-width: 380px) {
+            .container {
+                width: calc(100% - 22px);
+            }
+
+            .logo-text span {
+                display: none;
+            }
+
+            .news-card,
+            .side-card,
+            .video-card {
+                grid-template-columns: 98px 1fr;
+                gap: 10px;
+            }
+
+            .news-image,
+            .side-card img,
+            .video-thumb {
+                height: 85px;
+            }
+
+            .hero-main {
+                min-height: 290px;
+            }
+
+            .hero-content h1 {
+                font-size: 19px;
+            }
+        }
+    </style>
 </head>
 
+<body>
 
-<body class="text-gray-900 dark:text-[#F8F8FF]">
+    <!-- =========================
+         TOPBAR
+    ========================== -->
 
+    <div class="topbar">
+        <div class="container topbar-inner">
 
-<!-- =========================================================
-     TOP BAR
-========================================================= -->
-
-<div class="bg-[#B91C1C] text-[#F8F8FF] text-xs">
-
-    <div class="max-w-7xl mx-auto px-4">
-
-        <div class="h-9 flex items-center justify-between">
-
-            <div class="flex items-center gap-5">
-
-                <span>
-                    Selasa, 25 Agustus 2026
-                </span>
-
-                <span class="hidden md:block opacity-70">
-                    Mengawal Fakta Menjaga Kebenaran
-                </span>
-
+            <div class="breaking-mini">
+                <span>● LIVE</span>
+                Berita terkini dan terpercaya Indonesia
             </div>
 
-
-            <div class="hidden md:flex items-center gap-5">
-
-                <a href="#" class="hover:opacity-70">
-                    Facebook
-                </a>
-
-                <a href="#" class="hover:opacity-70">
-                    Instagram
-                </a>
-
-                <a href="#" class="hover:opacity-70">
-                    YouTube
-                </a>
-
-                <a href="#" class="hover:opacity-70">
-                    TikTok
-                </a>
-
+            <div class="top-social">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">YouTube</a>
+                <a href="#">X</a>
             </div>
 
         </div>
-
     </div>
 
-</div>
 
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
+    <header>
 
-<header
-    class="main-header sticky top-0 z-50 border-b border-[#B91C1C]/10 dark:border-[#F8F8FF]/10">
+        <div class="container">
 
-    <div class="max-w-7xl mx-auto px-4">
+            <div class="navbar">
 
-        <div class="h-16 md:h-20 flex items-center justify-between">
-
-
-            <!-- LOGO -->
-
-            <a href="#" class="flex items-center">
-
-                <img
-                    src="logo.png"
-                    alt="Legalitas.ID"
-                    class="h-10 md:h-16 w-auto object-contain">
-
-            </a>
-
-
-            <!-- DESKTOP MENU -->
-
-            <nav
-                class="hidden xl:flex items-center gap-5
-                       text-sm font-bold">
-
-                <a href="#" class="menu-link">
-                    Home
+                <a href="#" class="logo">
+                    <img src="logo.png" alt="Logo LEGALITAS.ID" class="logo-img" onerror="this.style.display='none'">
+                    <div class="logo-text">
+                        <strong>LEGALITAS.ID</strong>
+                        <span>MENGAWAL FAKTA • MENJAGA KEBENARAN</span>
+                    </div>
                 </a>
 
-                <a href="#nasional" class="menu-link">
-                    Nasional
-                </a>
 
-                <a href="#daerah" class="menu-link">
-                    Daerah
-                </a>
-
-                <a href="#politik" class="menu-link">
-                    Politik
-                </a>
-
-                <a href="#ekonomi" class="menu-link">
-                    Ekonomi
-                </a>
-
-                <a href="#pendidikan" class="menu-link">
-                    Pendidikan
-                </a>
-
-                <a href="#teknologi" class="menu-link">
-                    Teknologi
-                </a>
-
-                <a href="#olahraga" class="menu-link">
-                    Olahraga
-                </a>
-
-                <a href="#lifestyle" class="menu-link">
-                    Lifestyle
-                </a>
-
-            </nav>
+                <nav class="nav-menu">
+                    <a href="#" class="active">Home</a>
+                    <a href="#nasional">Nasional</a>
+                    <a href="#daerah">Daerah</a>
+                    <a href="#politik">Politik</a>
+                    <a href="#ekonomi">Ekonomi</a>
+                    <a href="#hukum">Hukum</a>
+                    <a href="#pendidikan">Pendidikan</a>
+                    <a href="#teknologi">Teknologi</a>
+                    <a href="#sport">Sport</a>
+                </nav>
 
 
-            <!-- ACTION -->
+                <div class="nav-actions">
+                    <button class="search-btn" id="searchBtn" aria-label="Cari Berita">
+                        🔍
+                    </button>
 
-            <div class="flex items-center gap-2">
-
-
-                <button
-                    onclick="openSearch()"
-                    class="action-btn">
-
-                    🔍
-
-                </button>
-
-
-                <button
-                    onclick="toggleDarkMode()"
-                    class="action-btn">
-
-                    🌙
-
-                </button>
-
-
-                <button
-                    onclick="openMobileMenu()"
-                    class="action-btn xl:hidden">
-
-                    ☰
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</header>
-
-
-<!-- =========================================================
-     BREAKING NEWS
-========================================================= -->
-
-<div class="bg-[#B91C1C] text-[#F8F8FF]">
-
-    <div class="max-w-7xl mx-auto px-4">
-
-        <div class="min-h-11 py-2 flex items-center">
-
-            <div
-                class="font-black text-xs uppercase tracking-wider
-                       mr-3 sm:mr-5 whitespace-nowrap">
-
-                <span class="breaking-dot">
-                    ●
-                </span>
-
-                BREAKING NEWS
-
-            </div>
-
-            <div class="border-l border-[#F8F8FF]/30 pl-3 sm:pl-5 overflow-hidden">
-
-                <div class="text-xs sm:text-sm truncate">
-
-                    Pemerintah terus mendorong transformasi digital
-                    dan peningkatan kualitas pelayanan publik.
-
+                    <button class="menu-btn" id="menuBtn" aria-label="Menu Navigasi">
+                        ☰
+                    </button>
                 </div>
 
             </div>
 
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     MAIN
-========================================================= -->
-
-<main class="max-w-7xl mx-auto px-4 py-6 md:py-8">
-
-
-<!-- =========================================================
-     HEADLINE
-========================================================= -->
-
-<section
-    id="nasional"
-    class="grid lg:grid-cols-3 gap-5">
-
-
-    <!-- MAIN HEADLINE -->
-
-    <article
-        class="lg:col-span-2 relative
-               h-80 sm:h-[480px]
-               rounded-2xl sm:rounded-3xl
-               overflow-hidden
-               cursor-pointer
-               group">
-
-        <img
-            src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1400&q=85"
-            alt="Berita utama"
-            class="absolute inset-0 w-full h-full object-cover
-                   group-hover:scale-105 transition duration-700">
-
-
-        <div
-            class="absolute inset-0 headline-overlay">
-        </div>
-
-
-        <div
-            class="absolute bottom-0 left-0 right-0
-                   p-5 md:p-9 text-white">
-
-
-            <span
-                class="inline-block
-                       bg-[#B91C1C]
-                       text-[#F8F8FF]
-                       px-2.5 py-1
-                       rounded-md
-                       text-[10px] sm:text-xs font-black uppercase">
-
-                Nasional
-
-            </span>
-
-
-            <h1
-                class="text-xl sm:text-3xl md:text-5xl
-                       font-black
-                       leading-tight
-                       mt-2 sm:mt-4">
-
-                Perkembangan Indonesia Hari Ini
-                Menjadi Perhatian Nasional
-
-            </h1>
-
-
-            <p
-                class="hidden sm:block text-gray-200
-                       mt-4
-                       max-w-2xl">
-
-                Informasi terbaru dan terpercaya dari
-                berbagai penjuru Indonesia.
-
-            </p>
-
-
-            <div
-                class="text-[10px] sm:text-xs text-gray-300 mt-2 sm:mt-5">
-
-                25 Agustus 2026 • 18:45 WIB
-
+            <!-- QUICK SCROLL BAR KHUSUS SMARTPHONE / TABLET -->
+            <div class="mobile-quick-nav">
+                <a href="#" class="active">Terbaru</a>
+                <a href="#nasional">Nasional</a>
+                <a href="#daerah">Daerah</a>
+                <a href="#politik">Politik</a>
+                <a href="#hukum">Hukum</a>
+                <a href="#ekonomi">Ekonomi</a>
+                <a href="#pendidikan">Pendidikan</a>
+                <a href="#teknologi">Teknologi</a>
+                <a href="#sport">Sport</a>
             </div>
 
-        </div>
 
-    </article>
-
-
-    <!-- SIDE HEADLINE -->
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-5">
-
-
-        <article
-            class="relative h-48 sm:h-[227px]
-                   rounded-2xl sm:rounded-3xl overflow-hidden
-                   group cursor-pointer">
-
-            <img
-                src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=900&q=85"
-                class="absolute inset-0 w-full h-full object-cover
-                       group-hover:scale-105 transition duration-700">
-
-            <div class="absolute inset-0 headline-overlay"></div>
-
-            <div class="absolute bottom-0 p-4 sm:p-5 text-white">
-
-                <span
-                    class="text-[10px] font-black
-                           bg-[#B91C1C]
-                           px-2 py-1 rounded">
-
-                    POLITIK
-
-                </span>
-
-                <h2
-                    class="font-bold text-base sm:text-xl mt-2 leading-snug">
-
-                    Dinamika Politik Nasional
-                    Terus Berkembang
-
-                </h2>
-
-            </div>
-
-        </article>
-
-
-        <article
-            class="relative h-48 sm:h-[227px]
-                   rounded-2xl sm:rounded-3xl overflow-hidden
-                   group cursor-pointer">
-
-            <img
-                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85"
-                class="absolute inset-0 w-full h-full object-cover
-                       group-hover:scale-105 transition duration-700">
-
-            <div class="absolute inset-0 headline-overlay"></div>
-
-            <div class="absolute bottom-0 p-4 sm:p-5 text-white">
-
-                <span
-                    class="text-[10px] font-black
-                           bg-[#B91C1C]
-                           px-2 py-1 rounded">
-
-                    EKONOMI
-
-                </span>
-
-                <h2
-                    class="font-bold text-base sm:text-xl mt-2 leading-snug">
-
-                    Ekonomi Digital Membuka
-                    Peluang Baru
-
-                </h2>
-
-            </div>
-
-        </article>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     BERITA TERKINI
-========================================================= -->
-
-<section class="mt-10 sm:mt-14">
-
-
-    <div class="flex items-center justify-between mb-5 sm:mb-7">
-
-        <h2
-            class="section-title
-                   text-xl sm:text-2xl font-black">
-
-            Berita Terkini
-
-        </h2>
-
-        <a
-            href="#"
-            class="text-[#B91C1C]
-                   dark:text-[#F8F8FF]
-                   text-xs sm:text-sm font-bold">
-
-            Lihat Semua →
-
-        </a>
-
-    </div>
-
-
-    <div class="grid lg:grid-cols-3 gap-8">
-
-
-        <!-- LIST -->
-
-        <div class="lg:col-span-2 space-y-5 sm:space-y-7">
-
-
-            <!-- ARTICLE 1 -->
-
-            <article
-                class="news-card flex flex-col sm:flex-row gap-4 sm:gap-5
-                       pb-5 sm:pb-7
-                       border-b border-black/10
-                       dark:border-white/10">
-
-
-                <div
-                    class="w-full sm:w-56
-                           h-48 sm:h-36
-                           rounded-2xl
-                           overflow-hidden
-                           flex-shrink-0">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=700&q=85"
-                        class="w-full h-full object-cover">
-
+            <!-- SEARCH -->
+            <div class="search-box" id="searchBox">
+                <div class="search-inner">
+                    <input
+                        type="text"
+                        placeholder="Cari berita, topik, atau kata kunci..."
+                    >
+                    <button aria-label="Submit Pencarian">🔍</button>
                 </div>
+            </div>
 
 
-                <div class="flex-1">
+            <!-- MOBILE MENU DRAWER -->
+            <div class="mobile-menu" id="mobileMenu">
+                <div class="mobile-menu-inner glass">
+                    <a href="#" class="active">Home</a>
+                    <a href="#nasional">Nasional</a>
+                    <a href="#daerah">Daerah</a>
+                    <a href="#politik">Politik</a>
+                    <a href="#ekonomi">Ekonomi</a>
+                    <a href="#hukum">Hukum</a>
+                    <a href="#pendidikan">Pendidikan</a>
+                    <a href="#teknologi">Teknologi</a>
+                    <a href="#sport">Sport</a>
+                </div>
+            </div>
 
-                    <span
-                        class="text-[#B91C1C]
-                               dark:text-[#F8F8FF]
-                               text-xs font-black uppercase">
+        </div>
 
-                        Nasional
-
-                    </span>
-
-
-                    <h3
-                        class="text-base sm:text-xl
-                               font-bold
-                               mt-1 sm:mt-2
-                               leading-snug">
-
-                        Pemerintah Perkuat Program
-                        Pembangunan Nasional
-
-                    </h3>
+    </header>
 
 
-                    <p
-                        class="hidden md:block
-                               text-sm text-gray-500
-                               dark:text-gray-400
-                               mt-2">
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
 
-                        Berbagai program strategis terus dilakukan
-                        untuk meningkatkan kesejahteraan masyarakat.
+    <main>
 
-                    </p>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-grid">
 
+                    <!-- MAIN NEWS -->
+                    <a href="#" class="hero-main">
+                        <img
+                            src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1400&q=85"
+                            alt="Berita utama"
+                        >
+                        <div class="hero-content">
+                            <span class="category">Nasional</span>
+                            <h1>
+                                Perkembangan Terkini Indonesia Menjadi Sorotan Publik Nasional
+                            </h1>
+                            <div class="hero-meta">
+                                <span>Legalitas.ID</span>
+                                <span>•</span>
+                                <span>26 Agustus 2026</span>
+                                <span>•</span>
+                                <span>08:30 WIB</span>
+                            </div>
+                        </div>
+                    </a>
 
-                    <div
-                        class="text-[10px] sm:text-xs text-gray-400 mt-2 sm:mt-3">
+                    <!-- SIDE NEWS -->
+                    <div class="side-news">
 
-                        25 Agustus 2026 • 16:30 WIB
+                        <a href="#" class="side-card">
+                            <img
+                                src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=900&q=80"
+                                alt="Politik"
+                            >
+                            <div class="side-card-content">
+                                <span class="category">Politik</span>
+                                <h3>
+                                    Dinamika Politik Nasional Terus Menjadi Perhatian
+                                </h3>
+                                <div class="side-card-meta">
+                                    1 Jam yang lalu
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="#" class="side-card">
+                            <img
+                                src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80"
+                                alt="Ekonomi"
+                            >
+                            <div class="side-card-content">
+                                <span class="category">Ekonomi</span>
+                                <h3>
+                                    Kebijakan Ekonomi Baru Diproyeksikan Dorong Pertumbuhan
+                                </h3>
+                                <div class="side-card-meta">
+                                    2 Jam yang lalu
+                                </div>
+                            </div>
+                        </a>
 
                     </div>
 
                 </div>
-
-            </article>
-
-
-            <!-- ARTICLE 2 -->
-
-            <article
-                class="news-card flex flex-col sm:flex-row gap-4 sm:gap-5
-                       pb-5 sm:pb-7
-                       border-b border-black/10
-                       dark:border-white/10">
+            </div>
+        </section>
 
 
-                <div
-                    class="w-full sm:w-56
-                           h-48 sm:h-36
-                           rounded-2xl
-                           overflow-hidden
-                           flex-shrink-0">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=700&q=85"
-                        class="w-full h-full object-cover">
-
-                </div>
-
-
-                <div class="flex-1">
-
-                    <span
-                        class="text-[#B91C1C]
-                               dark:text-[#F8F8FF]
-                               text-xs font-black uppercase">
-
-                        Pendidikan
-
-                    </span>
-
-
-                    <h3
-                        class="text-base sm:text-xl
-                               font-bold
-                               mt-1 sm:mt-2
-                               leading-snug">
-
-                        Pendidikan Indonesia Terus
-                        Beradaptasi dengan Era Digital
-
-                    </h3>
-
-
-                    <p
-                        class="hidden md:block
-                               text-sm text-gray-500
-                               dark:text-gray-400
-                               mt-2">
-
-                        Transformasi pembelajaran menjadi salah satu
-                        fokus utama dalam peningkatan mutu pendidikan.
-
-                    </p>
-
-
-                    <div
-                        class="text-[10px] sm:text-xs text-gray-400 mt-2 sm:mt-3">
-
-                        25 Agustus 2026 • 15:20 WIB
-
+        <!-- TRENDING -->
+        <div class="container">
+            <div class="trending">
+                <div class="trending-box">
+                    <div class="trending-inner">
+                        <div class="trending-label">Trending</div>
+                        <div class="trending-item">
+                            Pemerintah • Pendidikan • Politik • Ekonomi • Hukum • Teknologi • Daerah
+                        </div>
                     </div>
-
                 </div>
-
-            </article>
-
-
-            <!-- ARTICLE 3 -->
-
-            <article
-                class="news-card flex flex-col sm:flex-row gap-4 sm:gap-5
-                       pb-5 sm:pb-7
-                       border-b border-black/10
-                       dark:border-white/10">
-
-
-                <div
-                    class="w-full sm:w-56
-                           h-48 sm:h-36
-                           rounded-2xl
-                           overflow-hidden
-                           flex-shrink-0">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=85"
-                        class="w-full h-full object-cover">
-
-                </div>
-
-
-                <div class="flex-1">
-
-                    <span
-                        class="text-[#B91C1C]
-                               dark:text-[#F8F8FF]
-                               text-xs font-black uppercase">
-
-                        Daerah
-
-                    </span>
-
-
-                    <h3
-                        class="text-base sm:text-xl
-                               font-bold
-                               mt-1 sm:mt-2
-                               leading-snug">
-
-                        Berita Daerah:
-                        Aktivitas Masyarakat Kembali Menggeliat
-
-                    </h3>
-
-
-                    <p
-                        class="hidden md:block
-                               text-sm text-gray-500
-                               dark:text-gray-400
-                               mt-2">
-
-                        Perkembangan terbaru dari berbagai daerah
-                        di Indonesia.
-
-                    </p>
-
-
-                    <div
-                        class="text-[10px] sm:text-xs text-gray-400 mt-2 sm:mt-3">
-
-                        25 Agustus 2026 • 14:10 WIB
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- ARTICLE 4 -->
-
-            <article
-                class="news-card flex flex-col sm:flex-row gap-4 sm:gap-5">
-
-
-                <div
-                    class="w-full sm:w-56
-                           h-48 sm:h-36
-                           rounded-2xl
-                           overflow-hidden
-                           flex-shrink-0">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=85"
-                        class="w-full h-full object-cover">
-
-                </div>
-
-
-                <div class="flex-1">
-
-                    <span
-                        class="text-[#B91C1C]
-                               dark:text-[#F8F8FF]
-                               text-xs font-black uppercase">
-
-                        Teknologi
-
-                    </span>
-
-
-                    <h3
-                        class="text-base sm:text-xl
-                               font-bold
-                               mt-1 sm:mt-2
-                               leading-snug">
-
-                        Teknologi Digital Mengubah
-                        Cara Masyarakat Mendapatkan Informasi
-
-                    </h3>
-
-
-                    <p
-                        class="hidden md:block
-                               text-sm text-gray-500
-                               dark:text-gray-400
-                               mt-2">
-
-                        Perkembangan teknologi memberikan dampak
-                        besar terhadap kehidupan masyarakat.
-
-                    </p>
-
-
-                    <div
-                        class="text-[10px] sm:text-xs text-gray-400 mt-2 sm:mt-3">
-
-                        25 Agustus 2026 • 13:45 WIB
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
+            </div>
         </div>
 
 
-        <!-- SIDEBAR -->
+        <!-- BERITA TERKINI -->
+        <section class="section" id="nasional">
+            <div class="container">
 
-        <aside>
+                <div class="section-head">
+                    <div class="section-title">
+                        <div class="line"></div>
+                        <h2>Berita Terkini</h2>
+                    </div>
+                    <a href="#">Lihat Semua →</a>
+                </div>
 
+                <div class="content-grid">
 
-            <div
-                class="bg-white
-                       dark:bg-[#1A1A1A]
-                       rounded-2xl sm:rounded-3xl
-                       p-5 sm:p-6
-                       shadow-sm">
+                    <!-- NEWS LIST -->
+                    <div class="news-list">
 
+                        <article class="news-card">
+                            <div class="news-image">
+                                <img
+                                    src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80"
+                                    alt="Berita Nasional"
+                                >
+                            </div>
+                            <div class="news-info">
+                                <span class="category category-light">Nasional</span>
+                                <h3>
+                                    Pemerintah Siapkan Strategi Baru Menghadapi Tantangan Nasional
+                                </h3>
+                                <p>
+                                    Informasi terbaru terkait kebijakan dan perkembangan nasional menjadi perhatian masyarakat.
+                                </p>
+                                <div class="news-meta">
+                                    <span>Legalitas.ID</span>
+                                    <span>•</span>
+                                    <span>26 Agustus 2026</span>
+                                </div>
+                            </div>
+                        </article>
 
-                <h3
-                    class="section-title
-                           text-lg sm:text-xl font-black mb-6">
+                        <article class="news-card">
+                            <div class="news-image">
+                                <img
+                                    src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=800&q=80"
+                                    alt="Berita Hukum"
+                                >
+                            </div>
+                            <div class="news-info">
+                                <span class="category category-light">Hukum</span>
+                                <h3>
+                                    Penegakan Hukum dan Transparansi Menjadi Perhatian Publik
+                                </h3>
+                                <p>
+                                    Berbagai langkah hukum kembali menjadi pembahasan di tengah masyarakat.
+                                </p>
+                                <div class="news-meta">
+                                    <span>Hukum</span>
+                                    <span>•</span>
+                                    <span>3 Jam lalu</span>
+                                </div>
+                            </div>
+                        </article>
 
-                    Terpopuler
-
-                </h3>
-
-
-                <div class="space-y-6">
-
-
-                    <div class="flex gap-4">
-
-                        <div
-                            class="text-3xl sm:text-4xl font-black
-                                   text-[#B91C1C]/20
-                                   dark:text-[#F8F8FF]/20">
-
-                            01
-
+                        <!-- RUANG IKLAN: IN-FEED BANNER -->
+                        <div class="ad-box ad-infeed">
+                            <span class="ad-badge">Sponsored / Advertisement</span>
+                            <a href="#" target="_blank" rel="noopener" class="ad-link">
+                                <img 
+                                    src="https://placehold.co/800x110/f1f5f9/0a1128?text=RUANG+IKLAN+IN-FEED" 
+                                    alt="Iklan Tengah Berita"
+                                >
+                            </a>
                         </div>
 
-                        <div>
+                        <article class="news-card">
+                            <div class="news-image">
+                                <img
+                                    src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80"
+                                    alt="Berita Pendidikan"
+                                >
+                            </div>
+                            <div class="news-info">
+                                <span class="category category-light">Pendidikan</span>
+                                <h3>
+                                    Transformasi Pendidikan Indonesia Terus Didorong
+                                </h3>
+                                <p>
+                                    Dunia pendidikan terus berkembang seiring dengan perubahan teknologi dan kebutuhan generasi baru.
+                                </p>
+                                <div class="news-meta">
+                                    <span>Pendidikan</span>
+                                    <span>•</span>
+                                    <span>4 Jam lalu</span>
+                                </div>
+                            </div>
+                        </article>
 
-                            <span
-                                class="text-[10px]
-                                       font-black
-                                       text-[#B91C1C]
-                                       dark:text-[#F8F8FF]">
+                        <article class="news-card">
+                            <div class="news-image">
+                                <img
+                                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+                                    alt="Berita Teknologi"
+                                >
+                            </div>
+                            <div class="news-info">
+                                <span class="category category-light">Teknologi</span>
+                                <h3>
+                                    Perkembangan Teknologi Digital Mengubah Cara Masyarakat Bekerja
+                                </h3>
+                                <p>
+                                    Inovasi teknologi menjadi salah satu faktor penting dalam perkembangan ekonomi digital.
+                                </p>
+                                <div class="news-meta">
+                                    <span>Teknologi</span>
+                                    <span>•</span>
+                                    <span>5 Jam lalu</span>
+                                </div>
+                            </div>
+                        </article>
 
-                                NASIONAL
+                    </div>
 
-                            </span>
 
-                            <h4
-                                class="font-bold text-sm sm:text-base mt-1 leading-snug">
+                    <!-- SIDEBAR -->
+                    <aside class="sidebar">
 
-                                Berita Nasional Paling
-                                Banyak Dibaca Hari Ini
-
-                            </h4>
-
-                            <div
-                                class="text-xs text-gray-400 mt-1">
-
-                                125K views
-
+                        <!-- POPULER -->
+                        <div class="widget popular-widget">
+                            <div class="widget-title">
+                                <span></span>
+                                <h3>Berita Terpopuler</h3>
                             </div>
 
+                            <div class="popular-list">
+                                <a href="#" class="popular-item">
+                                    <div class="popular-number">01</div>
+                                    <div>
+                                        <h4>Perkembangan Politik Nasional Hari Ini</h4>
+                                        <small>12.5K pembaca</small>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="popular-item">
+                                    <div class="popular-number">02</div>
+                                    <div>
+                                        <h4>Kebijakan Ekonomi Baru Mendapat Perhatian</h4>
+                                        <small>9.8K pembaca</small>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="popular-item">
+                                    <div class="popular-number">03</div>
+                                    <div>
+                                        <h4>Berita Pendidikan Terbaru Indonesia</h4>
+                                        <small>8.6K pembaca</small>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="popular-item">
+                                    <div class="popular-number">04</div>
+                                    <div>
+                                        <h4>Penegakan Hukum Jadi Perhatian</h4>
+                                        <small>7.7K pembaca</small>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
 
-                    </div>
-
-
-                    <div class="flex gap-4">
-
-                        <div
-                            class="text-3xl sm:text-4xl font-black
-                                   text-[#B91C1C]/20
-                                   dark:text-[#F8F8FF]/20">
-
-                            02
-
+                        <!-- RUANG IKLAN: SIDEBAR -->
+                        <div class="ad-box ad-sidebar">
+                            <span class="ad-badge">Advertisement</span>
+                            <a href="#" target="_blank" rel="noopener" class="ad-link">
+                                <img 
+                                    src="https://placehold.co/400x300/f1f5f9/0a1128?text=IKLAN+SIDEBAR" 
+                                    alt="Iklan Sidebar"
+                                >
+                            </a>
                         </div>
 
-                        <div>
-
-                            <span
-                                class="text-[10px]
-                                       font-black
-                                       text-[#B91C1C]
-                                       dark:text-[#F8F8FF]">
-
-                                DAERAH
-
-                            </span>
-
-                            <h4
-                                class="font-bold text-sm sm:text-base mt-1 leading-snug">
-
-                                Informasi Daerah
-                                Menjadi Sorotan Publik
-
-                            </h4>
-
-                            <div
-                                class="text-xs text-gray-400 mt-1">
-
-                                98K views
-
+                        <!-- CATEGORY -->
+                        <div class="widget">
+                            <div class="widget-title">
+                                <span></span>
+                                <h3>Kategori Berita</h3>
                             </div>
 
-                        </div>
-
-                    </div>
-
-
-                    <div class="flex gap-4">
-
-                        <div
-                            class="text-3xl sm:text-4xl font-black
-                                   text-[#B91C1C]/20
-                                   dark:text-[#F8F8FF]/20">
-
-                            03
-
-                        </div>
-
-                        <div>
-
-                            <span
-                                class="text-[10px]
-                                       font-black
-                                       text-[#B91C1C]
-                                       dark:text-[#F8F8FF]">
-
-                                EKONOMI
-
-                            </span>
-
-                            <h4
-                                class="font-bold text-sm sm:text-base mt-1 leading-snug">
-
-                                Perkembangan Ekonomi
-                                Digital Indonesia
-
-                            </h4>
-
-                            <div
-                                class="text-xs text-gray-400 mt-1">
-
-                                84K views
-
+                            <div class="category-list">
+                                <a href="#">Nasional</a>
+                                <a href="#">Daerah</a>
+                                <a href="#">Politik</a>
+                                <a href="#">Hukum</a>
+                                <a href="#">Ekonomi</a>
+                                <a href="#">Pendidikan</a>
+                                <a href="#">Teknologi</a>
+                                <a href="#">Sport</a>
+                                <a href="#">Lifestyle</a>
+                                <a href="#">Kesehatan</a>
                             </div>
-
                         </div>
 
+                        <!-- NEWSLETTER -->
+                        <div class="newsletter">
+                            <h3>Dapatkan Berita Terbaru</h3>
+                            <p>
+                                Berlangganan newsletter Legalitas.ID dan dapatkan informasi terbaru langsung di email Anda.
+                            </p>
+                            <form class="newsletter-form">
+                                <input type="email" placeholder="Masukkan email Anda...">
+                                <button type="submit">SUBSCRIBE</button>
+                            </form>
+                        </div>
+
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- VIDEO -->
+        <section class="section">
+            <div class="container">
+
+                <div class="section-head">
+                    <div class="section-title">
+                        <div class="line"></div>
+                        <h2>Video Terbaru</h2>
                     </div>
+                    <a href="#">Semua Video →</a>
+                </div>
 
+                <div class="video-grid">
 
-                    <div class="flex gap-4">
-
-                        <div
-                            class="text-3xl sm:text-4xl font-black
-                                   text-[#B91C1C]/20
-                                   dark:text-[#F8F8FF]/20">
-
-                            04
-
+                    <article class="video-card">
+                        <div class="video-thumb is-video">
+                            <img
+                                src="https://images.unsplash.com/photo-1589903308904-1010c2294adc?auto=format&fit=crop&w=900&q=80"
+                                alt="Video 1"
+                            >
                         </div>
-
-                        <div>
-
-                            <span
-                                class="text-[10px]
-                                       font-black
-                                       text-[#B91C1C]
-                                       dark:text-[#F8F8FF]">
-
-                                PENDIDIKAN
-
-                            </span>
-
-                            <h4
-                                class="font-bold text-sm sm:text-base mt-1 leading-snug">
-
-                                Transformasi Pendidikan
-                                Menjadi Perhatian
-
-                            </h4>
-
-                            <div
-                                class="text-xs text-gray-400 mt-1">
-
-                                71K views
-
-                            </div>
-
+                        <div class="video-content">
+                            <h3>Update Berita Nasional Hari Ini</h3>
+                            <small>10 Menit lalu</small>
                         </div>
+                    </article>
 
+                    <article class="video-card">
+                        <div class="video-thumb is-video">
+                            <img
+                                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=80"
+                                alt="Video 2"
+                            >
+                        </div>
+                        <div class="video-content">
+                            <h3>Liputan Khusus Legalitas.ID</h3>
+                            <small>1 Jam lalu</small>
+                        </div>
+                    </article>
+
+                    <article class="video-card">
+                        <div class="video-thumb is-video">
+                            <img
+                                src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=900&q=80"
+                                alt="Video 3"
+                            >
+                        </div>
+                        <div class="video-content">
+                            <h3>Wawancara Eksklusif Bersama Narasumber</h3>
+                            <small>3 Jam lalu</small>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- DAERAH -->
+        <section class="section" id="daerah">
+            <div class="container">
+
+                <div class="section-head">
+                    <div class="section-title">
+                        <div class="line"></div>
+                        <h2>Berita Daerah</h2>
                     </div>
-
-
+                    <a href="#">Selengkapnya →</a>
                 </div>
 
+                <div class="video-grid">
+
+                    <article class="video-card">
+                        <div class="video-thumb">
+                            <img
+                                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+                                alt="Daerah 1"
+                            >
+                        </div>
+                        <div class="video-content">
+                            <h3>Kabar Terkini dari Berbagai Daerah Indonesia</h3>
+                            <small>Daerah • 1 Jam lalu</small>
+                        </div>
+                    </article>
+
+                    <article class="video-card">
+                        <div class="video-thumb">
+                            <img
+                                src="https://images.unsplash.com/photo-1465447142348-e9952c393450?auto=format&fit=crop&w=900&q=80"
+                                alt="Daerah 2"
+                            >
+                        </div>
+                        <div class="video-content">
+                            <h3>Pemerintah Daerah Dorong Program Pembangunan</h3>
+                            <small>Daerah • 2 Jam lalu</small>
+                        </div>
+                    </article>
+
+                    <article class="video-card">
+                        <div class="video-thumb">
+                            <img
+                                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80"
+                                alt="Daerah 3"
+                            >
+                        </div>
+                        <div class="video-content">
+                            <h3>Aktivitas Ekonomi Masyarakat Terus Bergerak</h3>
+                            <small>Daerah • 4 Jam lalu</small>
+                        </div>
+                    </article>
+
+                </div>
             </div>
+        </section>
 
 
-            <!-- AD -->
-
-            <div
-                class="mt-6
-                       h-48 sm:h-60
-                       rounded-2xl sm:rounded-3xl
-                       border-2 border-dashed
-                       border-[#B91C1C]/20
-                       dark:border-[#F8F8FF]/20
-                       flex items-center
-                       justify-center
-                       text-[#B91C1C]/50
-                       dark:text-[#F8F8FF]/50
-                       text-sm font-bold">
-
-                SPACE IKLAN
-
+        <!-- RUANG IKLAN: BOTTOM BANNER -->
+        <div class="container ad-wrapper">
+            <div class="ad-box ad-leaderboard">
+                <span class="ad-badge">Advertisement</span>
+                <a href="#" target="_blank" rel="noopener" class="ad-link">
+                    <img 
+                        src="https://placehold.co/1200x120/f1f5f9/0a1128?text=RUANG+IKLAN+BAWAH" 
+                        alt="Iklan Banner Bawah"
+                    >
+                </a>
             </div>
+        </div>
 
-        </aside>
+    </main>
 
-    </div>
 
-</section>
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
+    <footer>
+        <div class="container">
 
-<!-- =========================================================
-     BERITA DAERAH
-========================================================= -->
+            <div class="footer-main">
 
-<section id="daerah" class="mt-12 sm:mt-16">
-
-
-    <div class="flex items-center justify-between mb-5 sm:mb-7">
-
-        <h2 class="section-title text-xl sm:text-2xl font-black">
-            Berita Daerah
-        </h2>
-
-        <a href="#"
-           class="text-[#B91C1C] dark:text-[#F8F8FF]
-                  text-xs sm:text-sm font-bold">
-
-            Selengkapnya →
-
-        </a>
-
-    </div>
-
-
-    <div class="grid md:grid-cols-3 gap-5 sm:gap-7">
-
-
-        <article class="news-card">
-
-            <div
-                class="h-48 sm:h-56 rounded-2xl sm:rounded-3xl overflow-hidden">
-
-                <img
-                    src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=800&q=85"
-                    class="w-full h-full object-cover">
-
-            </div>
-
-            <span
-                class="block
-                       text-[#B91C1C]
-                       dark:text-[#F8F8FF]
-                       text-xs font-black mt-3 sm:mt-4">
-
-                ACEH
-
-            </span>
-
-            <h3 class="font-bold text-base sm:text-xl mt-1 leading-snug">
-
-                Aktivitas Pemerintahan Daerah
-                Terus Berjalan
-
-            </h3>
-
-            <p
-                class="text-xs sm:text-sm text-gray-500
-                       dark:text-gray-400 mt-1 sm:mt-2">
-
-                Informasi terkini seputar perkembangan daerah.
-
-            </p>
-
-        </article>
-
-
-        <article class="news-card">
-
-            <div
-                class="h-48 sm:h-56 rounded-2xl sm:rounded-3xl overflow-hidden">
-
-                <img
-                    src="https://images.unsplash.com/photo-1444723121867-7a241cacace9?auto=format&fit=crop&w=800&q=85"
-                    class="w-full h-full object-cover">
-
-            </div>
-
-            <span
-                class="block
-                       text-[#B91C1C]
-                       dark:text-[#F8F8FF]
-                       text-xs font-black mt-3 sm:mt-4">
-
-                SUMATERA
-
-            </span>
-
-            <h3 class="font-bold text-base sm:text-xl mt-1 leading-snug">
-
-                Potensi Daerah Menjadi
-                Perhatian Investor
-
-            </h3>
-
-            <p
-                class="text-xs sm:text-sm text-gray-500
-                       dark:text-gray-400 mt-1 sm:mt-2">
-
-                Potensi ekonomi dan pariwisata terus dikembangkan.
-
-            </p>
-
-        </article>
-
-
-        <article class="news-card">
-
-            <div
-                class="h-48 sm:h-56 rounded-2xl sm:rounded-3xl overflow-hidden">
-
-                <img
-                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=85"
-                    class="w-full h-full object-cover">
-
-            </div>
-
-            <span
-                class="block
-                       text-[#B91C1C]
-                       dark:text-[#F8F8FF]
-                       text-xs font-black mt-3 sm:mt-4">
-
-                MASYARAKAT
-
-            </span>
-
-            <h3 class="font-bold text-base sm:text-xl mt-1 leading-snug">
-
-                Masyarakat Dorong Pengembangan
-                Ekonomi Lokal
-
-            </h3>
-
-            <p
-                class="text-xs sm:text-sm text-gray-500
-                       dark:text-gray-400 mt-1 sm:mt-2">
-
-                Berbagai inovasi masyarakat mulai berkembang.
-
-            </p>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     KATEGORI
-========================================================= -->
-
-<section
-    id="politik"
-    class="mt-12 sm:mt-16">
-
-
-    <div class="grid lg:grid-cols-3 gap-5 sm:gap-7">
-
-
-        <!-- POLITIK -->
-
-        <div>
-
-            <h2
-                class="section-title
-                       text-lg sm:text-xl font-black mb-4 sm:mb-5">
-
-                Politik
-
-            </h2>
-
-
-            <div class="bg-white dark:bg-[#1A1A1A]
-                        rounded-2xl sm:rounded-3xl overflow-hidden">
-
-
-                <img
-                    src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=800&q=85"
-                    class="w-full h-40 sm:h-48 object-cover">
-
-
-                <div class="p-4 sm:p-5">
-
-                    <h3 class="font-bold text-base sm:text-lg">
-
-                        Perkembangan Politik
-                        Nasional Terbaru
-
-                    </h3>
-
-                    <p
-                        class="text-xs sm:text-sm text-gray-500
-                               dark:text-gray-400 mt-1 sm:mt-2">
-
-                        Berita dan informasi politik terkini.
-
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="logo.png" alt="Logo LEGALITAS.ID" class="logo-img" onerror="this.style.display='none'">
+                        <div class="logo-text" style="color:white;">
+                            <strong style="color: #ffffff;">LEGALITAS.ID</strong>
+                            <span>MENGAWAL FAKTA • MENJAGA KEBENARAN</span>
+                        </div>
+                    </div>
+                    <p>
+                        Legalitas.ID adalah media informasi yang hadir untuk menyajikan berita aktual, terpercaya dan berimbang dengan menjunjung tinggi prinsip jurnalistik.
                     </p>
-
                 </div>
 
+                <div>
+                    <div class="footer-title">MENU</div>
+                    <div class="footer-links">
+                        <a href="#">Home</a>
+                        <a href="#">Nasional</a>
+                        <a href="#">Daerah</a>
+                        <a href="#">Politik</a>
+                        <a href="#">Ekonomi</a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="footer-title">INFORMASI</div>
+                    <div class="footer-links">
+                        <a href="#">Tentang Kami</a>
+                        <a href="#">Redaksi</a>
+                        <a href="#">Kode Etik</a>
+                        <a href="#">Pedoman Media Siber</a>
+                        <a href="#">Kontak</a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="footer-title">KONTAK</div>
+                    <div class="footer-links">
+                        <a href="#">redaksi@legalitas.id</a>
+                        <a href="#">0850-0000-0000</a>
+                        <a href="#">Indonesia</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2026 Legalitas.ID. All Rights Reserved.</div>
+                <div>Mengawal Fakta, Menjaga Kebenaran.</div>
             </div>
 
         </div>
-
-
-        <!-- EKONOMI -->
-
-        <div id="ekonomi">
-
-            <h2
-                class="section-title
-                       text-lg sm:text-xl font-black mb-4 sm:mb-5">
-
-                Ekonomi
-
-            </h2>
-
-
-            <div class="bg-white dark:bg-[#1A1A1A]
-                        rounded-2xl sm:rounded-3xl overflow-hidden">
-
-
-                <img
-                    src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=85"
-                    class="w-full h-40 sm:h-48 object-cover">
-
-
-                <div class="p-4 sm:p-5">
-
-                    <h3 class="font-bold text-base sm:text-lg">
-
-                        Peluang Ekonomi Digital
-                        Terus Berkembang
-
-                    </h3>
-
-                    <p
-                        class="text-xs sm:text-sm text-gray-500
-                               dark:text-gray-400 mt-1 sm:mt-2">
-
-                        Informasi ekonomi dan bisnis terkini.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- PENDIDIKAN -->
-
-        <div id="pendidikan">
-
-            <h2
-                class="section-title
-                       text-lg sm:text-xl font-black mb-4 sm:mb-5">
-
-                Pendidikan
-
-            </h2>
-
-
-            <div class="bg-white dark:bg-[#1A1A1A]
-                        rounded-2xl sm:rounded-3xl overflow-hidden">
-
-
-                <img
-                    src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=800&q=85"
-                    class="w-full h-40 sm:h-48 object-cover">
-
-
-                <div class="p-4 sm:p-5">
-
-                    <h3 class="font-bold text-base sm:text-lg">
-
-                        Pendidikan Menjadi
-                        Investasi Masa Depan
-
-                    </h3>
-
-                    <p
-                        class="text-xs sm:text-sm text-gray-500
-                               dark:text-gray-400 mt-1 sm:mt-2">
-
-                        Informasi pendidikan terbaru.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     VIDEO
-========================================================= -->
-
-<section id="video" class="mt-12 sm:mt-16">
-
-
-    <div class="flex justify-between items-center mb-5 sm:mb-7">
-
-        <h2
-            class="section-title
-                   text-xl sm:text-2xl font-black">
-
-            Video
-
-        </h2>
-
-        <a
-            href="#"
-            class="text-[#B91C1C]
-                   dark:text-[#F8F8FF]
-                   text-xs sm:text-sm font-bold">
-
-            Semua Video →
-
-        </a>
-
-    </div>
-
-
-    <div class="grid md:grid-cols-3 gap-5 sm:gap-7">
-
-
-        <article
-            class="video-card
-                   relative
-                   h-48 sm:h-64
-                   rounded-2xl sm:rounded-3xl
-                   overflow-hidden
-                   group cursor-pointer">
-
-
-            <img
-                src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=900&q=85"
-                class="w-full h-full object-cover
-                       group-hover:scale-105 transition duration-700">
-
-
-            <div
-                class="absolute inset-0 bg-black/50">
-            </div>
-
-
-            <div
-                class="absolute inset-0
-                       flex items-center
-                       justify-center">
-
-                <div
-                    class="play-button
-                           w-12 sm:w-16 h-12 sm:h-16
-                           rounded-full
-                           bg-[#B91C1C]
-                           text-[#F8F8FF]
-                           flex items-center
-                           justify-center
-                           text-base sm:text-xl">
-
-                    ▶
-
-                </div>
-
-            </div>
-
-
-            <div
-                class="absolute bottom-0
-                       left-0 right-0
-                       p-4 sm:p-5 text-white">
-
-                <h3 class="font-bold text-sm sm:text-base">
-
-                    Video Berita Terkini Hari Ini
-
-                </h3>
-
-            </div>
-
-        </article>
-
-
-        <article
-            class="video-card
-                   relative
-                   h-48 sm:h-64
-                   rounded-2xl sm:rounded-3xl
-                   overflow-hidden
-                   group cursor-pointer">
-
-
-            <img
-                src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=900&q=85"
-                class="w-full h-full object-cover
-                       group-hover:scale-105 transition duration-700">
-
-
-            <div class="absolute inset-0 bg-black/50"></div>
-
-
-            <div
-                class="absolute inset-0
-                       flex items-center
-                       justify-center">
-
-                <div
-                    class="play-button
-                           w-12 sm:w-16 h-12 sm:h-16
-                           rounded-full
-                           bg-[#B91C1C]
-                           text-[#F8F8FF]
-                           flex items-center
-                           justify-center
-                           text-base sm:text-xl">
-
-                    ▶
-
-                </div>
-
-            </div>
-
-
-            <div
-                class="absolute bottom-0
-                       left-0 right-0
-                       p-4 sm:p-5 text-white">
-
-                <h3 class="font-bold text-sm sm:text-base">
-
-                    Wawancara Eksklusif Legalitas.ID
-
-                </h3>
-
-            </div>
-
-        </article>
-
-
-        <article
-            class="video-card
-                   relative
-                   h-48 sm:h-64
-                   rounded-2xl sm:rounded-3xl
-                   overflow-hidden
-                   group cursor-pointer">
-
-
-            <img
-                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=85"
-                class="w-full h-full object-cover
-                       group-hover:scale-105 transition duration-700">
-
-
-            <div class="absolute inset-0 bg-black/50"></div>
-
-
-            <div
-                class="absolute inset-0
-                       flex items-center
-                       justify-center">
-
-                <div
-                    class="play-button
-                           w-12 sm:w-16 h-12 sm:h-16
-                           rounded-full
-                           bg-[#B91C1C]
-                           text-[#F8F8FF]
-                           flex items-center
-                           justify-center
-                           text-base sm:text-xl">
-
-                    ▶
-
-                </div>
-
-            </div>
-
-
-            <div
-                class="absolute bottom-0
-                       left-0 right-0
-                       p-4 sm:p-5 text-white">
-
-                <h3 class="font-bold text-sm sm:text-base">
-
-                    Peristiwa yang Menjadi Sorotan
-
-                </h3>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     NEWSLETTER
-========================================================= -->
-
-<section class="mt-12 sm:mt-16">
-
-
-    <div
-        class="rounded-2xl sm:rounded-[2rem]
-               bg-[#4d4848]
-               text-[#F8F8FF]
-               p-6 sm:p-12">
-
-
-        <div
-            class="max-w-3xl
-                   mx-auto
-                   text-center">
-
-
-            <div
-                class="text-[10px] sm:text-xs
-                       font-black
-                       tracking-[3px] sm:tracking-[4px]
-                       uppercase">
-
-                LEGALITAS.ID
-
-            </div>
-
-
-            <h2
-                class="text-2xl sm:text-4xl
-                       font-black mt-2 sm:mt-3">
-
-                Jangan Lewatkan Berita Terbaru
-
-            </h2>
-
-
-            <p
-                class="mt-2 sm:mt-4
-                       text-xs sm:text-base
-                       text-[#F8F8FF]/70">
-
-                Dapatkan berita terbaru langsung
-                ke email Anda.
-
-            </p>
-
-
-            <form
-                onsubmit="subscribe(event)"
-                class="mt-5 sm:mt-7
-                       flex flex-col sm:flex-row
-                       gap-3">
-
-
-                <input
-                    id="emailInput"
-                    type="email"
-                    required
-                    placeholder="Masukkan email Anda"
-                    class="flex-1
-                           px-4 sm:px-5 py-3 sm:py-4
-                           rounded-xl
-                           bg-[#F8F8FF]
-                           text-[#B91C1C]
-                           text-sm
-                           outline-none">
-
-
-                <button
-                    type="submit"
-                    class="px-6 sm:px-7 py-3 sm:py-4
-                           rounded-xl
-                           bg-[#F8F8FF]
-                           text-[#B91C1C]
-                           text-sm sm:text-base
-                           font-black
-                           hover:bg-white">
-
-                    BERLANGGANAN
-
-                </button>
-
-            </form>
-
-
-            <div
-                id="subscribeMessage"
-                class="text-xs sm:text-sm mt-4 hidden">
-
-                Terima kasih telah berlangganan!
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-</main>
-
-
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer
-    class="bg-[#383636]
-           text-[#F8F8FF]
-           mt-12 sm:mt-20">
-
-
-    <div
-        class="max-w-7xl
-               mx-auto
-               px-4
-               py-10 sm:py-14">
-
-
-        <div
-            class="grid md:grid-cols-4
-                   gap-8 sm:gap-10">
-
-
-            <!-- BRAND -->
-
-            <div class="md:col-span-2">
-
-
-                <div
-                    class="text-2xl sm:text-3xl
-                           font-black">
-
-                    LEGALITAS.ID
-
-                </div>
-
-
-                <p
-                    class="text-xs sm:text-sm
-                           text-[#F8F8FF]/70
-                           mt-3 sm:mt-5
-                           max-w-xl
-                           leading-relaxed">
-
-                    Legalitas.id merupakan media berita
-                    online yang menyajikan informasi aktual,
-                    terpercaya dan berimbang dari berbagai
-                    penjuru Indonesia.
-
-                </p>
-
-
-                <div
-                    class="flex gap-3 mt-5 sm:mt-7">
-
-
-                    <a href="#" class="social-btn">
-                        f
-                    </a>
-
-                    <a href="#" class="social-btn">
-                        ig
-                    </a>
-
-                    <a href="#" class="social-btn">
-                        yt
-                    </a>
-
-                    <a href="#" class="social-btn">
-                        t
-                    </a>
-
-
-                </div>
-
-            </div>
-
-
-            <!-- KANAL -->
-
-            <div>
-
-                <h3 class="font-black text-base sm:text-lg mb-3 sm:mb-5">
-                    Kanal
-                </h3>
-
-
-                <div
-                    class="space-y-2.5 sm:space-y-3
-                           text-xs sm:text-sm
-                           text-[#F8F8FF]/70">
-
-                    <a href="#" class="block hover:text-white">
-                        Nasional
-                    </a>
-
-                    <a href="#" class="block hover:text-white">
-                        Daerah
-                    </a>
-
-                    <a href="#" class="block hover:text-white">
-                        Politik
-                    </a>
-
-                    <a href="#" class="block hover:text-white">
-                        Ekonomi
-                    </a>
-
-                    <a href="#" class="block hover:text-white">
-                        Pendidikan
-                    </a>
-
-                    <a href="#" class="block hover:text-white">
-                        Teknologi
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- PERUSAHAAN -->
-
-            <div>
-
-                <h3 class="font-black text-base sm:text-lg mb-3 sm:mb-5">
-                    Perusahaan
-                </h3>
-
-
-                <div
-                    class="space-y-2.5 sm:space-y-3
-                           text-xs sm:text-sm
-                           text-[#F8F8FF]/70">
-
-                    <a href="#" class="block hover:text-white">
-                        Tentang Kami
-                    </a>
-
-                    <a href="#" class="block hover:text-white">
-                        Redaksi
-                    </a>
-
-                    <a href="#" class="block hover:text-white">
-                        Pedoman Media Siber
-                    </a>
-
-                    <a href="#" class="block hover:text-white">
-                        Kontak
-                    </a>
-
-                    <a href="#" class="block hover:text-white">
-                        Karier
-                    </a>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-        <div
-            class="border-t
-                   border-[#F8F8FF]/15
-                   mt-8 sm:mt-12
-                   pt-6
-                   flex flex-col
-                   md:flex-row
-                   justify-between
-                   gap-3
-                   text-xs sm:text-sm
-                   text-[#F8F8FF]/50">
-
-
-            <div>
-                © 2026 Legalitas.id.
-                All Rights Reserved.
-            </div>
-
-
-            <div>
-                Mengawal Fakta Menjaga Kebenaran
-            </div>
-
-
-        </div>
-
-    </div>
-
-</footer>
-
-
-<!-- =========================================================
-     MOBILE MENU
-========================================================= -->
-
-<div
-    id="mobileMenu"
-    class="hidden fixed inset-0 z-[80] bg-black/60">
-
-
-    <div
-        class="absolute
-               right-0 top-0
-               h-full
-               w-72 sm:w-80
-               bg-[#F8F8FF]
-               dark:bg-[#111111]
-               p-6 overflow-y-auto">
-
-
-        <div
-            class="flex
-                   justify-between
-                   items-center
-                   mb-8">
-
-
-            <div class="flex items-center gap-2 font-black text-lg">
-
-                <img
-                    src="logo.png"
-                    alt="Legalitas"
-                    class="h-8 w-auto object-contain">
-
-                LEGALITAS
-
-            </div>
-
-
-            <button
-                onclick="openMobileMenu()"
-                class="text-3xl">
-
-                ×
-
-            </button>
-
-        </div>
-
-
-        <nav class="space-y-1">
-
-
-            <a href="#" class="mobile-link">
-                Home
-            </a>
-
-            <a href="#nasional" class="mobile-link">
-                Nasional
-            </a>
-
-            <a href="#daerah" class="mobile-link">
-                Daerah
-            </a>
-
-            <a href="#politik" class="mobile-link">
-                Politik
-            </a>
-
-            <a href="#ekonomi" class="mobile-link">
-                Ekonomi
-            </a>
-
-            <a href="#pendidikan" class="mobile-link">
-                Pendidikan
-            </a>
-
-            <a href="#teknologi" class="mobile-link">
-                Teknologi
-            </a>
-
-            <a href="#video" class="mobile-link">
-                Video
-            </a>
-
-        </nav>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     SEARCH MODAL
-========================================================= -->
-
-<div
-    id="searchModal"
-    class="hidden fixed inset-0 z-[100]
-           bg-black/70 search-modal">
-
-
-    <div
-        class="max-w-2xl
-               mx-auto
-               mt-16 sm:mt-28
-               px-4">
-
-
-        <div
-            class="bg-[#F8F8FF]
-                   dark:bg-[#111111]
-                   rounded-2xl sm:rounded-3xl
-                   p-5 sm:p-6">
-
-
-            <div
-                class="flex
-                       justify-between
-                       items-center
-                       mb-4 sm:mb-5">
-
-
-                <h2 class="text-lg sm:text-xl font-black">
-
-                    Cari Berita
-
-                </h2>
-
-
-                <button
-                    onclick="closeSearch()"
-                    class="text-2xl">
-
-                    ×
-
-                </button>
-
-            </div>
-
-
-            <div class="flex flex-col sm:flex-row gap-2">
-
-
-                <input
-                    id="searchInput"
-                    type="text"
-                    placeholder="Cari berita..."
-                    class="flex-1
-                           px-4 py-2.5 sm:py-3
-                           rounded-xl
-                           border
-                           border-[#B91C1C]/20
-                           bg-transparent
-                           text-sm
-                           outline-none">
-
-
-                <button
-                    onclick="searchNews()"
-                    class="px-6 py-2.5 sm:py-0
-                           rounded-xl
-                           bg-[#B91C1C]
-                           text-[#F8F8FF]
-                           text-sm
-                           font-bold">
-
-                    Cari
-
-                </button>
-
-            </div>
-
-
-            <div
-                id="searchResult"
-                class="mt-4 sm:mt-5
-                       text-sm
-                       opacity-70">
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
-<script>
-
-
-/* ==========================
-   DARK MODE
-========================== */
-
-function toggleDarkMode() {
-
-    document.documentElement.classList.toggle('dark');
-
-    const enabled =
-        document.documentElement.classList.contains('dark');
-
-    localStorage.setItem(
-        'legalitasDarkMode',
-        enabled
-    );
-
-}
-
-
-if (
-    localStorage.getItem('legalitasDarkMode') === 'true'
-) {
-
-    document.documentElement.classList.add('dark');
-
-}
-
-
-/* ==========================
-   MOBILE MENU
-========================== */
-
-function openMobileMenu() {
-
-    const menu =
-        document.getElementById('mobileMenu');
-
-    menu.classList.toggle('hidden');
-
-}
-
-
-/* ==========================
-   SEARCH
-========================== */
-
-function openSearch() {
-
-    document
-        .getElementById('searchModal')
-        .classList.remove('hidden');
-
-    document
-        .getElementById('searchInput')
-        .focus();
-
-}
-
-
-function closeSearch() {
-
-    document
-        .getElementById('searchModal')
-        .classList.add('hidden');
-
-}
-
-
-function searchNews() {
-
-    const keyword =
-        document
-            .getElementById('searchInput')
-            .value
-            .trim();
-
-    const result =
-        document.getElementById('searchResult');
-
-
-    if (!keyword) {
-
-        result.innerHTML =
-            'Silakan masukkan kata kunci berita.';
-
-        return;
-
-    }
-
-
-    result.innerHTML =
-
-        `Hasil pencarian untuk:
-         <strong>${keyword}</strong>`;
-
-}
-
-
-/* ==========================
-   NEWSLETTER
-========================== */
-
-function subscribe(event) {
-
-    event.preventDefault();
-
-    const message =
-        document.getElementById(
-            'subscribeMessage'
-        );
-
-    message.classList.remove('hidden');
-
-    document.getElementById(
-        'emailInput'
-    ).value = '';
-
-}
-
-
-/* ==========================
-   ESC
-========================== */
-
-document.addEventListener(
-    'keydown',
-    function(event) {
-
-        if (event.key === 'Escape') {
-
-            closeSearch();
-
-        }
-
-    }
-);
-
-
-/* ==========================
-   CLOSE MOBILE MENU
-========================== */
-
-document
-    .querySelectorAll('.mobile-link')
-    .forEach(function(link) {
-
-        link.addEventListener(
-            'click',
-            function() {
-
-                document
-                    .getElementById('mobileMenu')
-                    .classList.add('hidden');
-
+    </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">↑</button>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+        // SEARCH TOGGLE
+        const searchBtn = document.getElementById("searchBtn");
+        const searchBox = document.getElementById("searchBox");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const menuBtn = document.getElementById("menuBtn");
+
+        searchBtn.addEventListener("click", function () {
+            mobileMenu.classList.remove("show");
+            menuBtn.innerHTML = "☰";
+            searchBox.classList.toggle("show");
+            if (searchBox.classList.contains("show")) {
+                searchBox.querySelector("input").focus();
             }
-        );
+        });
 
-    });
+        // MOBILE MENU TOGGLE
+        menuBtn.addEventListener("click", function () {
+            searchBox.classList.remove("show");
+            mobileMenu.classList.toggle("show");
+            menuBtn.innerHTML = mobileMenu.classList.contains("show") ? "✕" : "☰";
+        });
 
+        // CLOSE MOBILE MENU ON LINK CLICK
+        document.querySelectorAll(".mobile-menu a").forEach(link => {
+            link.addEventListener("click", function () {
+                mobileMenu.classList.remove("show");
+                menuBtn.innerHTML = "☰";
+            });
+        });
 
-</script>
+        // NEWSLETTER SUBMIT
+        const newsletter = document.querySelector(".newsletter-form");
+        newsletter.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const email = this.querySelector("input").value.trim();
+            if (!email) {
+                alert("Silakan masukkan email Anda.");
+                return;
+            }
+            alert("Terima kasih! Email Anda berhasil didaftarkan.");
+            this.reset();
+        });
 
+        // SEARCH ENTER
+        const searchInput = document.querySelector(".search-inner input");
+        searchInput.addEventListener("keypress", function (e) {
+            if (e.key === "Enter") {
+                const keyword = this.value.trim();
+                if (!keyword) {
+                    alert("Masukkan kata kunci pencarian.");
+                    return;
+                }
+                alert("Mencari berita: " + keyword);
+            }
+        });
 
-<style>
+        // BACK TO TOP VISIBILITY
+        const backToTop = document.getElementById("backToTop");
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 400) {
+                backToTop.classList.add("visible");
+            } else {
+                backToTop.classList.remove("visible");
+            }
+        });
 
-.menu-link {
-
-    color: #B91C1C;
-    transition: .2s;
-
-}
-
-.dark .menu-link {
-
-    color: #F8F8FF;
-
-}
-
-.menu-link:hover {
-
-    opacity: .6;
-
-}
-
-
-.action-btn {
-
-    width: 36px;
-    height: 36px;
-
-    border-radius: 10px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transition: .2s;
-
-    color: #B91C1C;
-
-}
-
-@media (min-width: 640px) {
-    .action-btn {
-        width: 40px;
-        height: 40px;
-        border-radius: 12px;
-    }
-}
-
-.dark .action-btn {
-
-    color: #F8F8FF;
-
-}
-
-.action-btn:hover {
-
-    background: rgba(185, 28, 28, .10);
-
-}
-
-.dark .action-btn:hover {
-
-    background: rgba(248, 248, 255, .10);
-
-}
-
-</style>
-
+        backToTop.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
 
 </body>
 </html>
