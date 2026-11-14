@@ -135,12 +135,15 @@
             transform: scale(1.015);
         }
 
-        .ad-leaderboard img {
-            height: 115px;
+        /* Grid Iklan 3 Card Menyamping (In-Feed & Bottom) */
+        .ad-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
         }
 
-        .ad-infeed img {
-            height: 100px;
+        .ad-grid-3 img {
+            height: 75px;
         }
 
         .ad-sidebar img {
@@ -225,8 +228,6 @@
             gap: 16px;
         }
 
-        /* LOGO */
-
         .logo {
             display: flex;
             align-items: center;
@@ -260,8 +261,6 @@
             letter-spacing: 1.5px;
             font-weight: 700;
         }
-
-        /* DESKTOP MENU */
 
         .nav-menu {
             display: flex;
@@ -330,7 +329,6 @@
             display: none;
         }
 
-        /* MOBILE QUICK SCROLL NAV (Khusus Smartphone/Tablet) */
         .mobile-quick-nav {
             display: none;
             overflow-x: auto;
@@ -338,11 +336,11 @@
             gap: 8px;
             padding: 8px 0 10px;
             border-top: 1px solid rgba(184, 151, 40, 0.18);
-            scrollbar-width: none; /* Firefox */
+            scrollbar-width: none;
         }
 
         .mobile-quick-nav::-webkit-scrollbar {
-            display: none; /* Chrome/Safari */
+            display: none;
         }
 
         .mobile-quick-nav a {
@@ -363,10 +361,6 @@
             color: var(--gold-light);
             border-color: var(--navy-dark);
         }
-
-        /* =========================
-           SEARCH
-        ========================== */
 
         .search-box {
             display: none;
@@ -411,10 +405,7 @@
             cursor: pointer;
         }
 
-        /* =========================
-           HERO
-        ========================== */
-
+        /* HERO */
         .hero {
             padding: 32px 0 20px;
         }
@@ -505,8 +496,6 @@
             font-size: 12px;
         }
 
-        /* SIDE HERO */
-
         .side-news {
             display: grid;
             grid-template-rows: 1fr 1fr;
@@ -565,10 +554,7 @@
             color: #cbd5e1;
         }
 
-        /* =========================
-           TRENDING
-        ========================== */
-
+        /* TRENDING */
         .trending {
             margin: 18px 0 8px;
         }
@@ -608,10 +594,7 @@
             font-weight: 600;
         }
 
-        /* =========================
-           SECTION
-        ========================== */
-
+        /* SECTION */
         .section {
             padding: 30px 0;
         }
@@ -662,10 +645,6 @@
             border-color: var(--navy-dark);
         }
 
-        /* =========================
-           LAYOUT CONTENT
-        ========================== */
-
         .content-grid {
             display: grid;
             grid-template-columns: 1.55fr .75fr;
@@ -673,10 +652,7 @@
             align-items: start;
         }
 
-        /* =========================
-           NEWS CARD
-        ========================== */
-
+        /* NEWS CARD */
         .news-list {
             display: grid;
             gap: 16px;
@@ -753,10 +729,7 @@
             font-weight: 500;
         }
 
-        /* =========================
-           SIDEBAR
-        ========================== */
-
+        /* SIDEBAR */
         .sidebar {
             display: grid;
             gap: 18px;
@@ -790,14 +763,8 @@
             color: var(--navy-dark);
         }
 
-        /* POPULAR */
-
         .widget.popular-widget {
-            background: linear-gradient(
-                135deg,
-                var(--navy-dark) 0%,
-                var(--navy-mid) 100%
-            );
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-mid) 100%);
             border: 1px solid var(--gold);
             box-shadow: 0 15px 35px rgba(10, 17, 40, 0.12);
             color: #ffffff;
@@ -858,8 +825,6 @@
             font-size: 11px;
         }
 
-        /* CATEGORY */
-
         .category-list {
             display: flex;
             flex-wrap: wrap;
@@ -882,10 +847,6 @@
             background: var(--navy-dark);
             color: var(--white);
         }
-
-        /* =========================
-           NEWSLETTER CTA
-        ========================== */
 
         .newsletter {
             padding: 20px;
@@ -943,10 +904,6 @@
             font-size: 12px;
             white-space: nowrap;
         }
-
-        /* =========================
-           VIDEO & DAERAH GRID
-        ========================== */
 
         .video-grid {
             display: grid;
@@ -1022,10 +979,7 @@
             font-size: 11px;
         }
 
-        /* =========================
-           FOOTER
-        ========================== */
-
+        /* FOOTER */
         footer {
             margin-top: 35px;
             background: linear-gradient(180deg, var(--navy-dark) 0%, #03050a 100%);
@@ -1080,10 +1034,6 @@
             font-size: 12px;
         }
 
-        /* =========================
-           MOBILE NAV DRAWER
-        ========================== */
-
         .mobile-menu {
             display: none;
             padding: 8px 0 16px;
@@ -1120,7 +1070,6 @@
             display: block;
         }
 
-        /* BACK TO TOP BUTTON */
         .back-to-top {
             position: fixed;
             bottom: 20px;
@@ -1148,10 +1097,6 @@
             opacity: 1;
             visibility: visible;
         }
-
-        /* =========================
-           RESPONSIVE TABLET & MOBILE
-        ========================== */
 
         @media (max-width: 1050px) {
             .nav-menu {
@@ -1192,15 +1137,11 @@
             }
         }
 
-        /* =========================
-           OPTIMASI SMARTPHONE (< 760px)
-        ========================== */
         @media (max-width: 760px) {
             .container {
                 width: calc(100% - 28px);
             }
 
-            /* Topbar solid gelap agar teks terbaca jelas di HP */
             .topbar {
                 background: linear-gradient(90deg, #154a6d 0%, #154a6d 50%, #154a6d 100%);
                 color: #ffffff;
@@ -1219,7 +1160,6 @@
                 display: none;
             }
 
-            /* Header & Logo */
             .navbar {
                 min-height: 62px;
             }
@@ -1250,7 +1190,6 @@
                 border-radius: 10px;
             }
 
-            /* Hero Utama */
             .hero {
                 padding: 14px 0 12px;
             }
@@ -1283,7 +1222,6 @@
                 gap: 7px;
             }
 
-            /* Side News jadi Kartu Horizontal Rapi di HP */
             .side-news {
                 grid-template-columns: 1fr;
                 grid-template-rows: auto;
@@ -1340,7 +1278,6 @@
                 margin-top: 5px;
             }
 
-            /* Trending Bar */
             .trending {
                 margin: 12px 0 6px;
             }
@@ -1363,7 +1300,6 @@
                 font-size: 12px;
             }
 
-            /* Section Header */
             .section {
                 padding: 22px 0;
             }
@@ -1385,7 +1321,6 @@
                 padding: 5px 10px;
             }
 
-            /* News List Card */
             .news-list {
                 gap: 12px;
             }
@@ -1431,20 +1366,18 @@
                 gap: 6px;
             }
 
-            /* Iklan di Smartphone */
-            .ad-infeed img {
-                height: 75px;
+            .ad-grid-3 {
+                gap: 6px;
             }
 
-            .ad-leaderboard img {
-                height: 85px;
+            .ad-grid-3 img {
+                height: 58px;
             }
 
             .ad-sidebar img {
                 height: 220px;
             }
 
-            /* Sidebar */
             .sidebar {
                 grid-template-columns: 1fr;
                 gap: 16px;
@@ -1463,7 +1396,6 @@
                 width: 100%;
             }
 
-            /* Video & Daerah Grid di Smartphone */
             .video-grid {
                 grid-template-columns: 1fr;
                 gap: 14px;
@@ -1507,7 +1439,6 @@
                 font-size: 10px;
             }
 
-            /* Footer Smartphone */
             footer {
                 margin-top: 25px;
             }
@@ -1534,7 +1465,6 @@
             }
         }
 
-        /* Layar Sangat Kecil (< 380px) */
         @media (max-width: 380px) {
             .container {
                 width: calc(100% - 22px);
@@ -1570,39 +1500,26 @@
 
 <body>
 
-    <!-- =========================
-         TOPBAR
-    ========================== -->
-
+    <!-- TOPBAR -->
     <div class="topbar">
         <div class="container topbar-inner">
-
             <div class="breaking-mini">
                 <span>● LIVE</span>
                 Berita terkini dan terpercaya Indonesia
             </div>
-
             <div class="top-social">
                 <a href="#">Facebook</a>
                 <a href="#">Instagram</a>
                 <a href="#">YouTube</a>
                 <a href="#">X</a>
             </div>
-
         </div>
     </div>
 
-
-    <!-- =========================
-         HEADER
-    ========================== -->
-
+    <!-- HEADER -->
     <header>
-
         <div class="container">
-
             <div class="navbar">
-
                 <a href="#" class="logo">
                     <img src="logo.png" alt="Logo LEGALITAS.ID" class="logo-img" onerror="this.style.display='none'">
                     <div class="logo-text">
@@ -1610,7 +1527,6 @@
                         <span>MENGAWAL FAKTA • MENJAGA KEBENARAN</span>
                     </div>
                 </a>
-
 
                 <nav class="nav-menu">
                     <a href="#" class="active">Home</a>
@@ -1624,20 +1540,12 @@
                     <a href="#sport">Sport</a>
                 </nav>
 
-
                 <div class="nav-actions">
-                    <button class="search-btn" id="searchBtn" aria-label="Cari Berita">
-                        🔍
-                    </button>
-
-                    <button class="menu-btn" id="menuBtn" aria-label="Menu Navigasi">
-                        ☰
-                    </button>
+                    <button class="search-btn" id="searchBtn" aria-label="Cari Berita">🔍</button>
+                    <button class="menu-btn" id="menuBtn" aria-label="Menu Navigasi">☰</button>
                 </div>
-
             </div>
 
-            <!-- QUICK SCROLL BAR KHUSUS SMARTPHONE / TABLET -->
             <div class="mobile-quick-nav">
                 <a href="#" class="active">Terbaru</a>
                 <a href="#nasional">Nasional</a>
@@ -1650,20 +1558,13 @@
                 <a href="#sport">Sport</a>
             </div>
 
-
-            <!-- SEARCH -->
             <div class="search-box" id="searchBox">
                 <div class="search-inner">
-                    <input
-                        type="text"
-                        placeholder="Cari berita, topik, atau kata kunci..."
-                    >
+                    <input type="text" placeholder="Cari berita, topik, atau kata kunci...">
                     <button aria-label="Submit Pencarian">🔍</button>
                 </div>
             </div>
 
-
-            <!-- MOBILE MENU DRAWER -->
             <div class="mobile-menu" id="mobileMenu">
                 <div class="mobile-menu-inner glass">
                     <a href="#" class="active">Home</a>
@@ -1677,85 +1578,49 @@
                     <a href="#sport">Sport</a>
                 </div>
             </div>
-
         </div>
-
     </header>
 
-
-    <!-- =========================
-         MAIN CONTENT
-    ========================== -->
-
+    <!-- MAIN CONTENT -->
     <main>
 
         <!-- HERO -->
         <section class="hero">
             <div class="container">
                 <div class="hero-grid">
-
-                    <!-- MAIN NEWS -->
                     <a href="#" class="hero-main">
-                        <img
-                            src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1400&q=85"
-                            alt="Berita utama"
-                        >
+                        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1400&q=85" alt="Berita utama">
                         <div class="hero-content">
                             <span class="category">Nasional</span>
-                            <h1>
-                                Perkembangan Terkini Indonesia Menjadi Sorotan Publik Nasional
-                            </h1>
+                            <h1>Perkembangan Terkini Indonesia Menjadi Sorotan Publik Nasional</h1>
                             <div class="hero-meta">
-                                <span>Legalitas.ID</span>
-                                <span>•</span>
-                                <span>26 Agustus 2026</span>
-                                <span>•</span>
-                                <span>08:30 WIB</span>
+                                <span>Legalitas.ID</span><span>•</span><span>26 Agustus 2026</span><span>•</span><span>08:30 WIB</span>
                             </div>
                         </div>
                     </a>
 
-                    <!-- SIDE NEWS -->
                     <div class="side-news">
-
                         <a href="#" class="side-card">
-                            <img
-                                src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=900&q=80"
-                                alt="Politik"
-                            >
+                            <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=900&q=80" alt="Politik">
                             <div class="side-card-content">
                                 <span class="category">Politik</span>
-                                <h3>
-                                    Dinamika Politik Nasional Terus Menjadi Perhatian
-                                </h3>
-                                <div class="side-card-meta">
-                                    1 Jam yang lalu
-                                </div>
+                                <h3>Dinamika Politik Nasional Terus Menjadi Perhatian</h3>
+                                <div class="side-card-meta">1 Jam yang lalu</div>
                             </div>
                         </a>
 
                         <a href="#" class="side-card">
-                            <img
-                                src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80"
-                                alt="Ekonomi"
-                            >
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80" alt="Ekonomi">
                             <div class="side-card-content">
                                 <span class="category">Ekonomi</span>
-                                <h3>
-                                    Kebijakan Ekonomi Baru Diproyeksikan Dorong Pertumbuhan
-                                </h3>
-                                <div class="side-card-meta">
-                                    2 Jam yang lalu
-                                </div>
+                                <h3>Kebijakan Ekonomi Baru Diproyeksikan Dorong Pertumbuhan</h3>
+                                <div class="side-card-meta">2 Jam yang lalu</div>
                             </div>
                         </a>
-
                     </div>
-
                 </div>
             </div>
         </section>
-
 
         <!-- TRENDING -->
         <div class="container">
@@ -1771,11 +1636,9 @@
             </div>
         </div>
 
-
         <!-- BERITA TERKINI -->
         <section class="section" id="nasional">
             <div class="container">
-
                 <div class="section-head">
                     <div class="section-title">
                         <div class="line"></div>
@@ -1785,126 +1648,81 @@
                 </div>
 
                 <div class="content-grid">
-
-                    <!-- NEWS LIST -->
                     <div class="news-list">
 
                         <article class="news-card">
                             <div class="news-image">
-                                <img
-                                    src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80"
-                                    alt="Berita Nasional"
-                                >
+                                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" alt="Berita Nasional">
                             </div>
                             <div class="news-info">
                                 <span class="category category-light">Nasional</span>
-                                <h3>
-                                    Pemerintah Siapkan Strategi Baru Menghadapi Tantangan Nasional
-                                </h3>
-                                <p>
-                                    Informasi terbaru terkait kebijakan dan perkembangan nasional menjadi perhatian masyarakat.
-                                </p>
-                                <div class="news-meta">
-                                    <span>Legalitas.ID</span>
-                                    <span>•</span>
-                                    <span>26 Agustus 2026</span>
-                                </div>
+                                <h3>Pemerintah Siapkan Strategi Baru Menghadapi Tantangan Nasional</h3>
+                                <p>Informasi terbaru terkait kebijakan dan perkembangan nasional menjadi perhatian masyarakat.</p>
+                                <div class="news-meta"><span>Legalitas.ID</span><span>•</span><span>26 Agustus 2026</span></div>
                             </div>
                         </article>
 
                         <article class="news-card">
                             <div class="news-image">
-                                <img
-                                    src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=800&q=80"
-                                    alt="Berita Hukum"
-                                >
+                                <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=800&q=80" alt="Berita Hukum">
                             </div>
                             <div class="news-info">
                                 <span class="category category-light">Hukum</span>
-                                <h3>
-                                    Penegakan Hukum dan Transparansi Menjadi Perhatian Publik
-                                </h3>
-                                <p>
-                                    Berbagai langkah hukum kembali menjadi pembahasan di tengah masyarakat.
-                                </p>
-                                <div class="news-meta">
-                                    <span>Hukum</span>
-                                    <span>•</span>
-                                    <span>3 Jam lalu</span>
-                                </div>
+                                <h3>Penegakan Hukum dan Transparansi Menjadi Perhatian Publik</h3>
+                                <p>Berbagai langkah hukum kembali menjadi pembahasan di tengah masyarakat.</p>
+                                <div class="news-meta"><span>Hukum</span><span>•</span><span>3 Jam lalu</span></div>
                             </div>
                         </article>
 
-                        <!-- RUANG IKLAN: IN-FEED BANNER -->
-                        <div class="ad-box ad-infeed">
+                        <!-- RUANG IKLAN: IN-FEED BANNER (3 CARD MENYAMPING) -->
+                        <div class="ad-box">
                             <span class="ad-badge">Sponsored / Advertisement</span>
-                            <a href="#" target="_blank" rel="noopener" class="ad-link">
-                                <img 
-                                    src="https://placehold.co/800x110/f1f5f9/0a1128?text=RUANG+IKLAN+IN-FEED" 
-                                    alt="Iklan Tengah Berita"
-                                >
-                            </a>
+                            <div class="ad-grid-3">
+                                <a href="#" target="_blank" rel="noopener" class="ad-link">
+                                    <img src="https://placehold.co/300x90/f1f5f9/0a1128?text=IKLAN+IN-FEED+1" alt="Iklan In-Feed 1">
+                                </a>
+                                <a href="#" target="_blank" rel="noopener" class="ad-link">
+                                    <img src="https://placehold.co/300x90/f1f5f9/0a1128?text=IKLAN+IN-FEED+2" alt="Iklan In-Feed 2">
+                                </a>
+                                <a href="#" target="_blank" rel="noopener" class="ad-link">
+                                    <img src="https://placehold.co/300x90/f1f5f9/0a1128?text=IKLAN+IN-FEED+3" alt="Iklan In-Feed 3">
+                                </a>
+                            </div>
                         </div>
 
                         <article class="news-card">
                             <div class="news-image">
-                                <img
-                                    src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80"
-                                    alt="Berita Pendidikan"
-                                >
+                                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80" alt="Berita Pendidikan">
                             </div>
                             <div class="news-info">
                                 <span class="category category-light">Pendidikan</span>
-                                <h3>
-                                    Transformasi Pendidikan Indonesia Terus Didorong
-                                </h3>
-                                <p>
-                                    Dunia pendidikan terus berkembang seiring dengan perubahan teknologi dan kebutuhan generasi baru.
-                                </p>
-                                <div class="news-meta">
-                                    <span>Pendidikan</span>
-                                    <span>•</span>
-                                    <span>4 Jam lalu</span>
-                                </div>
+                                <h3>Transformasi Pendidikan Indonesia Terus Didorong</h3>
+                                <p>Dunia pendidikan terus berkembang seiring dengan perubahan teknologi dan kebutuhan generasi baru.</p>
+                                <div class="news-meta"><span>Pendidikan</span><span>•</span><span>4 Jam lalu</span></div>
                             </div>
                         </article>
 
                         <article class="news-card">
                             <div class="news-image">
-                                <img
-                                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
-                                    alt="Berita Teknologi"
-                                >
+                                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Berita Teknologi">
                             </div>
                             <div class="news-info">
                                 <span class="category category-light">Teknologi</span>
-                                <h3>
-                                    Perkembangan Teknologi Digital Mengubah Cara Masyarakat Bekerja
-                                </h3>
-                                <p>
-                                    Inovasi teknologi menjadi salah satu faktor penting dalam perkembangan ekonomi digital.
-                                </p>
-                                <div class="news-meta">
-                                    <span>Teknologi</span>
-                                    <span>•</span>
-                                    <span>5 Jam lalu</span>
-                                </div>
+                                <h3>Perkembangan Teknologi Digital Mengubah Cara Masyarakat Bekerja</h3>
+                                <p>Inovasi teknologi menjadi salah satu faktor penting dalam perkembangan ekonomi digital.</p>
+                                <div class="news-meta"><span>Teknologi</span><span>•</span><span>5 Jam lalu</span></div>
                             </div>
                         </article>
 
                     </div>
 
-
                     <!-- SIDEBAR -->
                     <aside class="sidebar">
-
-                        <!-- POPULER -->
                         <div class="widget popular-widget">
                             <div class="widget-title">
                                 <span></span>
                                 <h3>Berita Terpopuler</h3>
                             </div>
-
                             <div class="popular-list">
                                 <a href="#" class="popular-item">
                                     <div class="popular-number">01</div>
@@ -1913,7 +1731,6 @@
                                         <small>12.5K pembaca</small>
                                     </div>
                                 </a>
-
                                 <a href="#" class="popular-item">
                                     <div class="popular-number">02</div>
                                     <div>
@@ -1921,7 +1738,6 @@
                                         <small>9.8K pembaca</small>
                                     </div>
                                 </a>
-
                                 <a href="#" class="popular-item">
                                     <div class="popular-number">03</div>
                                     <div>
@@ -1929,7 +1745,6 @@
                                         <small>8.6K pembaca</small>
                                     </div>
                                 </a>
-
                                 <a href="#" class="popular-item">
                                     <div class="popular-number">04</div>
                                     <div>
@@ -1940,24 +1755,18 @@
                             </div>
                         </div>
 
-                        <!-- RUANG IKLAN: SIDEBAR -->
                         <div class="ad-box ad-sidebar">
                             <span class="ad-badge">Advertisement</span>
                             <a href="#" target="_blank" rel="noopener" class="ad-link">
-                                <img 
-                                    src="https://placehold.co/400x300/f1f5f9/0a1128?text=IKLAN+SIDEBAR" 
-                                    alt="Iklan Sidebar"
-                                >
+                                <img src="https://placehold.co/400x300/f1f5f9/0a1128?text=IKLAN+SIDEBAR" alt="Iklan Sidebar">
                             </a>
                         </div>
 
-                        <!-- CATEGORY -->
                         <div class="widget">
                             <div class="widget-title">
                                 <span></span>
                                 <h3>Kategori Berita</h3>
                             </div>
-
                             <div class="category-list">
                                 <a href="#">Nasional</a>
                                 <a href="#">Daerah</a>
@@ -1972,29 +1781,23 @@
                             </div>
                         </div>
 
-                        <!-- NEWSLETTER -->
                         <div class="newsletter">
                             <h3>Dapatkan Berita Terbaru</h3>
-                            <p>
-                                Berlangganan newsletter Legalitas.ID dan dapatkan informasi terbaru langsung di email Anda.
-                            </p>
+                            <p>Berlangganan newsletter Legalitas.ID dan dapatkan informasi terbaru langsung di email Anda.</p>
                             <form class="newsletter-form">
                                 <input type="email" placeholder="Masukkan email Anda...">
                                 <button type="submit">SUBSCRIBE</button>
                             </form>
                         </div>
-
                     </aside>
 
                 </div>
             </div>
         </section>
 
-
         <!-- VIDEO -->
         <section class="section">
             <div class="container">
-
                 <div class="section-head">
                     <div class="section-title">
                         <div class="line"></div>
@@ -2004,13 +1807,9 @@
                 </div>
 
                 <div class="video-grid">
-
                     <article class="video-card">
                         <div class="video-thumb is-video">
-                            <img
-                                src="https://images.unsplash.com/photo-1589903308904-1010c2294adc?auto=format&fit=crop&w=900&q=80"
-                                alt="Video 1"
-                            >
+                            <img src="https://images.unsplash.com/photo-1589903308904-1010c2294adc?auto=format&fit=crop&w=900&q=80" alt="Video 1">
                         </div>
                         <div class="video-content">
                             <h3>Update Berita Nasional Hari Ini</h3>
@@ -2020,10 +1819,7 @@
 
                     <article class="video-card">
                         <div class="video-thumb is-video">
-                            <img
-                                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=80"
-                                alt="Video 2"
-                            >
+                            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=80" alt="Video 2">
                         </div>
                         <div class="video-content">
                             <h3>Liputan Khusus Legalitas.ID</h3>
@@ -2033,26 +1829,20 @@
 
                     <article class="video-card">
                         <div class="video-thumb is-video">
-                            <img
-                                src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=900&q=80"
-                                alt="Video 3"
-                            >
+                            <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=900&q=80" alt="Video 3">
                         </div>
                         <div class="video-content">
                             <h3>Wawancara Eksklusif Bersama Narasumber</h3>
                             <small>3 Jam lalu</small>
                         </div>
                     </article>
-
                 </div>
             </div>
         </section>
 
-
         <!-- DAERAH -->
         <section class="section" id="daerah">
             <div class="container">
-
                 <div class="section-head">
                     <div class="section-title">
                         <div class="line"></div>
@@ -2062,13 +1852,9 @@
                 </div>
 
                 <div class="video-grid">
-
                     <article class="video-card">
                         <div class="video-thumb">
-                            <img
-                                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
-                                alt="Daerah 1"
-                            >
+                            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Daerah 1">
                         </div>
                         <div class="video-content">
                             <h3>Kabar Terkini dari Berbagai Daerah Indonesia</h3>
@@ -2078,10 +1864,7 @@
 
                     <article class="video-card">
                         <div class="video-thumb">
-                            <img
-                                src="https://images.unsplash.com/photo-1465447142348-e9952c393450?auto=format&fit=crop&w=900&q=80"
-                                alt="Daerah 2"
-                            >
+                            <img src="https://images.unsplash.com/photo-1465447142348-e9952c393450?auto=format&fit=crop&w=900&q=80" alt="Daerah 2">
                         </div>
                         <div class="video-content">
                             <h3>Pemerintah Daerah Dorong Program Pembangunan</h3>
@@ -2091,47 +1874,41 @@
 
                     <article class="video-card">
                         <div class="video-thumb">
-                            <img
-                                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80"
-                                alt="Daerah 3"
-                            >
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Daerah 3">
                         </div>
                         <div class="video-content">
                             <h3>Aktivitas Ekonomi Masyarakat Terus Bergerak</h3>
                             <small>Daerah • 4 Jam lalu</small>
                         </div>
                     </article>
-
                 </div>
             </div>
         </section>
 
-
-        <!-- RUANG IKLAN: BOTTOM BANNER -->
+        <!-- RUANG IKLAN: BOTTOM BANNER (3 CARD MENYAMPING) -->
         <div class="container ad-wrapper">
-            <div class="ad-box ad-leaderboard">
+            <div class="ad-box">
                 <span class="ad-badge">Advertisement</span>
-                <a href="#" target="_blank" rel="noopener" class="ad-link">
-                    <img 
-                        src="https://placehold.co/1200x120/f1f5f9/0a1128?text=RUANG+IKLAN+BAWAH" 
-                        alt="Iklan Banner Bawah"
-                    >
-                </a>
+                <div class="ad-grid-3">
+                    <a href="#" target="_blank" rel="noopener" class="ad-link">
+                        <img src="https://placehold.co/400x90/f1f5f9/0a1128?text=IKLAN+BAWAH+1" alt="Iklan Bawah 1">
+                    </a>
+                    <a href="#" target="_blank" rel="noopener" class="ad-link">
+                        <img src="https://placehold.co/400x90/f1f5f9/0a1128?text=IKLAN+BAWAH+2" alt="Iklan Bawah 2">
+                    </a>
+                    <a href="#" target="_blank" rel="noopener" class="ad-link">
+                        <img src="https://placehold.co/400x90/f1f5f9/0a1128?text=IKLAN+BAWAH+3" alt="Iklan Bawah 3">
+                    </a>
+                </div>
             </div>
         </div>
 
     </main>
 
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-
             <div class="footer-main">
-
                 <div class="footer-brand">
                     <div class="logo">
                         <img src="logo.png" alt="Logo LEGALITAS.ID" class="logo-img" onerror="this.style.display='none'">
@@ -2140,9 +1917,7 @@
                             <span>MENGAWAL FAKTA • MENJAGA KEBENARAN</span>
                         </div>
                     </div>
-                    <p>
-                        Legalitas.ID adalah media informasi yang hadir untuk menyajikan berita aktual, terpercaya dan berimbang dengan menjunjung tinggi prinsip jurnalistik.
-                    </p>
+                    <p>Legalitas.ID adalah media informasi yang hadir untuk menyajikan berita aktual, terpercaya dan berimbang dengan menjunjung tinggi prinsip jurnalistik.</p>
                 </div>
 
                 <div>
@@ -2175,27 +1950,20 @@
                         <a href="#">Indonesia</a>
                     </div>
                 </div>
-
             </div>
 
             <div class="footer-bottom">
                 <div>© 2026 Legalitas.ID. All Rights Reserved.</div>
                 <div>Mengawal Fakta, Menjaga Kebenaran.</div>
             </div>
-
         </div>
     </footer>
 
     <!-- BACK TO TOP BUTTON -->
     <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">↑</button>
 
-
-    <!-- =========================
-         JAVASCRIPT
-    ========================== -->
-
+    <!-- JAVASCRIPT -->
     <script>
-        // SEARCH TOGGLE
         const searchBtn = document.getElementById("searchBtn");
         const searchBox = document.getElementById("searchBox");
         const mobileMenu = document.getElementById("mobileMenu");
@@ -2210,14 +1978,12 @@
             }
         });
 
-        // MOBILE MENU TOGGLE
         menuBtn.addEventListener("click", function () {
             searchBox.classList.remove("show");
             mobileMenu.classList.toggle("show");
             menuBtn.innerHTML = mobileMenu.classList.contains("show") ? "✕" : "☰";
         });
 
-        // CLOSE MOBILE MENU ON LINK CLICK
         document.querySelectorAll(".mobile-menu a").forEach(link => {
             link.addEventListener("click", function () {
                 mobileMenu.classList.remove("show");
@@ -2225,7 +1991,6 @@
             });
         });
 
-        // NEWSLETTER SUBMIT
         const newsletter = document.querySelector(".newsletter-form");
         newsletter.addEventListener("submit", function (e) {
             e.preventDefault();
@@ -2238,7 +2003,6 @@
             this.reset();
         });
 
-        // SEARCH ENTER
         const searchInput = document.querySelector(".search-inner input");
         searchInput.addEventListener("keypress", function (e) {
             if (e.key === "Enter") {
@@ -2251,7 +2015,6 @@
             }
         });
 
-        // BACK TO TOP VISIBILITY
         const backToTop = document.getElementById("backToTop");
         window.addEventListener("scroll", function () {
             if (window.scrollY > 400) {
