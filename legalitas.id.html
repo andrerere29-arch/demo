@@ -1,0 +1,2270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+    <title>Legalitas.ID - Mengawal Fakta, Menjaga Kebenaran</title>
+    <meta name="description" content="Legalitas.ID - Mengawal Fakta, Menjaga Kebenaran">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --accent: #d4af37;
+            --navy-dark: #0a1128;
+            --navy-mid: #101c40;
+            --navy-light: #1d2d50;
+            --gold: #b89728;
+            --gold-light: #f3e5ab;
+            --gray-light: #f4f4f6;
+            --gray-text: #4b5563;
+            --white: #ffffff;
+            --glass: linear-gradient(145deg, rgba(255, 255, 255, 0.96) 0%, rgba(240, 243, 248, 0.94) 100%);
+            --border: rgba(184, 151, 40, 0.3);
+            --shadow: 0 20px 40px rgba(10, 17, 40, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background:
+                radial-gradient(circle at 85% 10%, rgba(184, 151, 40, 0.06), transparent 45%),
+                radial-gradient(circle at 15% 40%, rgba(29, 45, 80, 0.04), transparent 50%),
+                #ffffff;
+            background-attachment: fixed;
+            color: var(--navy-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        button,
+        input {
+            font-family: inherit;
+        }
+
+        /* =========================
+           GLASS
+        ========================== */
+
+        .glass {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: var(--shadow);
+        }
+
+        /* =========================
+           CONTAINER
+        ========================== */
+
+        .container {
+            width: min(1200px, calc(100% - 40px));
+            margin: auto;
+        }
+
+        /* =========================
+           AD SPACE / RUANG IKLAN
+        ========================== */
+
+        .ad-wrapper {
+            margin: 22px auto 0;
+        }
+
+        .ad-box {
+            position: relative;
+            border-radius: 14px;
+            padding: 8px 10px;
+            background: linear-gradient(145deg, #f8fafc, #edf2f7);
+            border: 1px dashed rgba(184, 151, 40, 0.45);
+            overflow: hidden;
+            transition: .3s;
+        }
+
+        .ad-box:hover {
+            border-color: var(--gold);
+        }
+
+        .ad-badge {
+            display: block;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        .ad-link {
+            display: block;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ad-link img {
+            width: 100%;
+            object-fit: cover;
+            transition: transform .4s ease;
+        }
+
+        .ad-box:hover .ad-link img {
+            transform: scale(1.015);
+        }
+
+        .ad-leaderboard img {
+            height: 115px;
+        }
+
+        .ad-infeed img {
+            height: 100px;
+        }
+
+        .ad-sidebar img {
+            height: 260px;
+        }
+
+        /* =========================
+           TOP BAR
+        ========================== */
+
+        .topbar {
+            background: linear-gradient(90deg, #102B46 0%, #ffffff 50%, #ffffff 100%);
+            color: var(--navy-dark);
+            border-bottom: 1px solid rgba(184, 151, 40, 0.25);
+            font-size: 13px;
+        }
+
+        .topbar-inner {
+            min-height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .breaking-mini {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            color: #f0e90a;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        @keyframes blinkEffect {
+            0% { opacity: 1; }
+            50% { opacity: 0.2; }
+            100% { opacity: 1; }
+        }
+
+        .breaking-mini span {
+            color: #ff4d4d;
+            font-weight: 900;
+            animation: blinkEffect 1.2s infinite ease-in-out;
+            text-shadow: 0 0 6px rgba(220, 38, 38, 0.4);
+            flex-shrink: 0;
+        }
+
+        .top-social {
+            display: flex;
+            gap: 14px;
+            color: var(--navy-dark);
+            font-weight: 600;
+        }
+
+        .top-social a:hover {
+            color: var(--gold);
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 2px solid var(--border);
+            box-shadow: 0 4px 20px rgba(10, 17, 40, 0.06);
+        }
+
+        .navbar {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        /* LOGO */
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            flex-shrink: 0;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            line-height: 1.05;
+        }
+
+        .logo-text strong {
+            display: block;
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: -0.8px;
+            color: var(--navy-dark);
+        }
+
+        .logo-text span {
+            display: block;
+            margin-top: 3px;
+            font-size: 9px;
+            color: var(--gold);
+            letter-spacing: 1.5px;
+            font-weight: 700;
+        }
+
+        /* DESKTOP MENU */
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-menu a {
+            position: relative;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 14px;
+            color: var(--navy-dark);
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--white);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-light) 100%);
+        }
+
+        .nav-menu a.active::after {
+            content: "";
+            position: absolute;
+            bottom: 4px;
+            left: 14px;
+            width: 18px;
+            height: 2px;
+            border-radius: 10px;
+            background: var(--gold);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .search-btn,
+        .menu-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 11px;
+            border: 1px solid var(--border);
+            background: #f8fafc;
+            color: var(--navy-dark);
+            cursor: pointer;
+            transition: .3s;
+            font-size: 16px;
+        }
+
+        .search-btn:hover,
+        .menu-btn:hover {
+            border-color: var(--navy-dark);
+            background: var(--navy-dark);
+            color: var(--white);
+        }
+
+        .menu-btn {
+            display: none;
+        }
+
+        /* MOBILE QUICK SCROLL NAV (Khusus Smartphone/Tablet) */
+        .mobile-quick-nav {
+            display: none;
+            overflow-x: auto;
+            white-space: nowrap;
+            gap: 8px;
+            padding: 8px 0 10px;
+            border-top: 1px solid rgba(184, 151, 40, 0.18);
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .mobile-quick-nav::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .mobile-quick-nav a {
+            display: inline-block;
+            padding: 6px 13px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            background: #f1f5f9;
+            color: var(--navy-dark);
+            border: 1px solid rgba(184, 151, 40, 0.25);
+            transition: .25s;
+        }
+
+        .mobile-quick-nav a.active,
+        .mobile-quick-nav a:active {
+            background: var(--navy-dark);
+            color: var(--gold-light);
+            border-color: var(--navy-dark);
+        }
+
+        /* =========================
+           SEARCH
+        ========================== */
+
+        .search-box {
+            display: none;
+            padding: 12px 0 16px;
+            border-top: 1px solid rgba(184, 151, 40, 0.2);
+        }
+
+        .search-box.show {
+            display: block;
+        }
+
+        .search-inner {
+            position: relative;
+        }
+
+        .search-inner input {
+            width: 100%;
+            padding: 13px 48px 13px 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            outline: none;
+            background: #f8fafc;
+            color: var(--navy-dark);
+            font-size: 14px;
+        }
+
+        .search-inner input::placeholder {
+            color: #94a3b8;
+        }
+
+        .search-inner button {
+            position: absolute;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            border: 0;
+            border-radius: 9px;
+            background: var(--navy-dark);
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            padding: 32px 0 20px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.65fr 1fr;
+            gap: 20px;
+        }
+
+        .hero-main {
+            position: relative;
+            min-height: 480px;
+            border-radius: 22px;
+            overflow: hidden;
+            isolation: isolate;
+            border: 1px solid var(--border);
+            background: var(--navy-dark);
+            display: block;
+        }
+
+        .hero-main::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(10, 17, 40, 0.05) 0%,
+                    rgba(5, 9, 20, 0.45) 45%,
+                    rgba(5, 9, 20, 0.94) 100%
+                );
+            z-index: 1;
+        }
+
+        .hero-main img {
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .7s ease;
+        }
+
+        .hero-main:hover img {
+            transform: scale(1.04);
+        }
+
+        .hero-content {
+            position: absolute;
+            z-index: 3;
+            left: 30px;
+            right: 30px;
+            bottom: 28px;
+        }
+
+        .category {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 10px;
+            border-radius: 7px;
+            background: var(--navy-dark);
+            color: var(--gold-light);
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+            border: 1px solid rgba(184, 151, 40, 0.4);
+        }
+
+        .hero-content h1 {
+            margin-top: 11px;
+            max-width: 780px;
+            font-size: clamp(24px, 3.8vw, 44px);
+            line-height: 1.15;
+            letter-spacing: -1px;
+            font-weight: 900;
+            color: #ffffff;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin-top: 12px;
+            color: #e2e8f0;
+            font-size: 12px;
+        }
+
+        /* SIDE HERO */
+
+        .side-news {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .side-card {
+            position: relative;
+            min-height: 230px;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            background: var(--navy-dark);
+            display: block;
+        }
+
+        .side-card img {
+            height: 100%;
+            object-fit: cover;
+            transition: .6s;
+        }
+
+        .side-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .side-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                transparent 15%,
+                rgba(5, 9, 20, 0.9)
+            );
+        }
+
+        .side-card-content {
+            position: absolute;
+            left: 18px;
+            right: 18px;
+            bottom: 16px;
+            z-index: 2;
+        }
+
+        .side-card h3 {
+            margin-top: 8px;
+            font-size: 18px;
+            line-height: 1.25;
+            color: #ffffff;
+        }
+
+        .side-card-meta {
+            margin-top: 7px;
+            font-size: 11px;
+            color: #cbd5e1;
+        }
+
+        /* =========================
+           TRENDING
+        ========================== */
+
+        .trending {
+            margin: 18px 0 8px;
+        }
+
+        .trending-box {
+            border-radius: 14px;
+            overflow: hidden;
+            background: #f8fafc;
+            border: 1px solid var(--border);
+        }
+
+        .trending-inner {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 11px 16px;
+        }
+
+        .trending-label {
+            background: var(--navy-dark);
+            color: var(--gold-light);
+            border-radius: 6px;
+            padding: 5px 9px;
+            font-size: 10px;
+            font-weight: 900;
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .trending-item {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--navy-dark);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* =========================
+           SECTION
+        ========================== */
+
+        .section {
+            padding: 30px 0;
+        }
+
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+            gap: 12px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title .line {
+            width: 4px;
+            height: 24px;
+            border-radius: 10px;
+            background: linear-gradient(180deg, var(--navy-dark) 0%, var(--gold) 100%);
+        }
+
+        .section-title h2 {
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: -.6px;
+            color: var(--navy-dark);
+        }
+
+        .section-head a {
+            font-size: 12px;
+            color: var(--navy-dark);
+            font-weight: 600;
+            background: #f1f5f9;
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: .3s;
+            white-space: nowrap;
+        }
+
+        .section-head a:hover {
+            background: var(--navy-dark);
+            color: var(--white);
+            border-color: var(--navy-dark);
+        }
+
+        /* =========================
+           LAYOUT CONTENT
+        ========================== */
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1.55fr .75fr;
+            gap: 28px;
+            align-items: start;
+        }
+
+        /* =========================
+           NEWS CARD
+        ========================== */
+
+        .news-list {
+            display: grid;
+            gap: 16px;
+        }
+
+        .news-card {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 18px;
+            padding: 12px;
+            border-radius: 16px;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            transition: .3s;
+            box-shadow: 0 4px 15px rgba(10, 17, 40, 0.04);
+            align-items: center;
+        }
+
+        .news-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--navy-dark);
+            box-shadow: 0 10px 25px rgba(10, 17, 40, 0.08);
+        }
+
+        .news-image {
+            height: 150px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .news-image img {
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .news-card:hover .news-image img {
+            transform: scale(1.06);
+        }
+
+        .news-info {
+            padding: 2px 4px;
+            min-width: 0;
+        }
+
+        .news-info .category-light {
+            background: #f1f5f9;
+            color: var(--navy-dark);
+            border: 1px solid var(--border);
+        }
+
+        .news-info h3 {
+            margin-top: 8px;
+            font-size: 19px;
+            line-height: 1.3;
+            color: var(--navy-dark);
+            font-weight: 800;
+        }
+
+        .news-info p {
+            margin-top: 8px;
+            color: var(--gray-text);
+            font-size: 13px;
+            line-height: 1.55;
+        }
+
+        .news-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 11px;
+            color: #64748b;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        /* =========================
+           SIDEBAR
+        ========================== */
+
+        .sidebar {
+            display: grid;
+            gap: 18px;
+        }
+
+        .widget {
+            padding: 18px;
+            border-radius: 16px;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 15px rgba(10, 17, 40, 0.04);
+        }
+
+        .widget-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .widget-title span {
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(180deg, var(--navy-dark) 0%, var(--gold) 100%);
+            border-radius: 10px;
+        }
+
+        .widget-title h3 {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--navy-dark);
+        }
+
+        /* POPULAR */
+
+        .widget.popular-widget {
+            background: linear-gradient(
+                135deg,
+                var(--navy-dark) 0%,
+                var(--navy-mid) 100%
+            );
+            border: 1px solid var(--gold);
+            box-shadow: 0 15px 35px rgba(10, 17, 40, 0.12);
+            color: #ffffff;
+        }
+
+        .widget.popular-widget .widget-title span {
+            background: linear-gradient(180deg, var(--gold) 0%, var(--gold-light) 100%);
+        }
+
+        .widget.popular-widget .widget-title h3 {
+            color: var(--gold-light);
+        }
+
+        .popular-list {
+            display: grid;
+            gap: 13px;
+        }
+
+        .popular-item {
+            display: grid;
+            grid-template-columns: 36px 1fr;
+            gap: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(184, 151, 40, 0.25);
+            align-items: center;
+        }
+
+        .popular-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .popular-number {
+            width: 36px;
+            height: 36px;
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--navy-light);
+            border: 1px solid rgba(184, 151, 40, 0.4);
+            color: var(--gold-light);
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        .popular-item h4 {
+            font-size: 13px;
+            line-height: 1.4;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .popular-item small {
+            display: block;
+            margin-top: 3px;
+            color: #cbd5e1;
+            font-size: 11px;
+        }
+
+        /* CATEGORY */
+
+        .category-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .category-list a {
+            padding: 8px 12px;
+            border-radius: 9px;
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            font-size: 12px;
+            color: var(--navy-dark);
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .category-list a:hover {
+            border-color: var(--navy-dark);
+            background: var(--navy-dark);
+            color: var(--white);
+        }
+
+        /* =========================
+           NEWSLETTER CTA
+        ========================== */
+
+        .newsletter {
+            padding: 20px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-mid) 100%);
+            border: 1px solid var(--gold);
+            box-shadow: 0 15px 35px rgba(10, 17, 40, 0.12);
+            color: #ffffff;
+        }
+
+        .newsletter h3 {
+            font-size: 19px;
+            line-height: 1.25;
+            font-weight: 900;
+            color: var(--gold-light);
+        }
+
+        .newsletter p {
+            margin-top: 8px;
+            color: #cbd5e1;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            min-width: 0;
+            padding: 12px;
+            background: #ffffff;
+            border: 1px solid var(--gold);
+            color: var(--navy-dark);
+            outline: none;
+            border-radius: 10px;
+            font-size: 13px;
+        }
+
+        .newsletter-form input::placeholder {
+            color: #94a3b8;
+        }
+
+        .newsletter-form button {
+            border: 0;
+            padding: 0 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            background: var(--gold);
+            color: var(--navy-dark);
+            font-weight: 800;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        /* =========================
+           VIDEO & DAERAH GRID
+        ========================== */
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .video-card {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            transition: transform .3s ease, border-color .3s ease;
+            box-shadow: 0 4px 15px rgba(10, 17, 40, 0.04);
+        }
+
+        .video-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--navy-dark);
+        }
+
+        .video-thumb {
+            height: 160px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-thumb img {
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .video-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .video-thumb.is-video::after {
+            content: "▶";
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10, 17, 40, 0.9);
+            border: 1px solid var(--gold);
+            color: var(--gold-light);
+            font-size: 13px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        .video-content {
+            padding: 13px 14px;
+        }
+
+        .video-content h3 {
+            font-size: 15px;
+            line-height: 1.38;
+            color: var(--navy-dark);
+            font-weight: 700;
+        }
+
+        .video-content small {
+            display: block;
+            margin-top: 6px;
+            color: #64748b;
+            font-size: 11px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            margin-top: 35px;
+            background: linear-gradient(180deg, var(--navy-dark) 0%, #03050a 100%);
+            border-top: 1px solid rgba(184, 151, 40, 0.3);
+            color: #ffffff;
+        }
+
+        .footer-main {
+            padding: 45px 0;
+            display: grid;
+            grid-template-columns: 1.35fr 1fr 1fr 1fr;
+            gap: 32px;
+        }
+
+        .footer-brand p {
+            margin-top: 14px;
+            max-width: 340px;
+            color: #94a3b8;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .footer-title {
+            margin-bottom: 12px;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--gold-light);
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links {
+            display: grid;
+            gap: 9px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .footer-bottom {
+            padding: 18px 0;
+            border-top: 1px solid rgba(184, 151, 40, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #94a3b8;
+            font-size: 12px;
+        }
+
+        /* =========================
+           MOBILE NAV DRAWER
+        ========================== */
+
+        .mobile-menu {
+            display: none;
+            padding: 8px 0 16px;
+        }
+
+        .mobile-menu-inner {
+            padding: 10px;
+            border-radius: 14px;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            box-shadow: 0 12px 30px rgba(10, 17, 40, 0.12);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 11px 12px;
+            border-radius: 9px;
+            color: var(--navy-dark);
+            font-size: 13px;
+            font-weight: 600;
+            background: #f8fafc;
+        }
+
+        .mobile-menu a:hover,
+        .mobile-menu a.active {
+            background: var(--navy-dark);
+            color: var(--gold-light);
+        }
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+        /* BACK TO TOP BUTTON */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 18px;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: var(--navy-dark);
+            color: var(--gold-light);
+            border: 1px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(10, 17, 40, 0.25);
+            opacity: 0;
+            visibility: hidden;
+            transition: .3s;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* =========================
+           RESPONSIVE TABLET & MOBILE
+        ========================== */
+
+        @media (max-width: 1050px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .menu-btn {
+                display: flex;
+            }
+
+            .mobile-quick-nav {
+                display: flex;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .side-news {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 220px;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .newsletter {
+                grid-column: span 2;
+            }
+
+            .footer-main {
+                grid-template-columns: 1.5fr 1fr 1fr;
+            }
+        }
+
+        /* =========================
+           OPTIMASI SMARTPHONE (< 760px)
+        ========================== */
+        @media (max-width: 760px) {
+            .container {
+                width: calc(100% - 28px);
+            }
+
+            /* Topbar solid gelap agar teks terbaca jelas di HP */
+            .topbar {
+                background: var(--navy-dark);
+                color: #ffffff;
+                font-size: 11px;
+            }
+
+            .topbar-inner {
+                min-height: 32px;
+            }
+
+            .breaking-mini {
+                color: #f8fafc;
+            }
+
+            .top-social {
+                display: none;
+            }
+
+            /* Header & Logo */
+            .navbar {
+                min-height: 62px;
+            }
+
+            .logo {
+                gap: 9px;
+            }
+
+            .logo-img {
+                height: 32px;
+            }
+
+            .logo-text strong {
+                font-size: 18px;
+                letter-spacing: -0.5px;
+            }
+
+            .logo-text span {
+                font-size: 7.5px;
+                letter-spacing: 1px;
+                margin-top: 2px;
+            }
+
+            .search-btn,
+            .menu-btn {
+                width: 38px;
+                height: 38px;
+                border-radius: 10px;
+            }
+
+            /* Hero Utama */
+            .hero {
+                padding: 14px 0 12px;
+            }
+
+            .hero-grid {
+                gap: 12px;
+            }
+
+            .hero-main {
+                min-height: 320px;
+                border-radius: 16px;
+            }
+
+            .hero-content {
+                left: 16px;
+                right: 16px;
+                bottom: 16px;
+            }
+
+            .hero-content h1 {
+                font-size: 21px;
+                line-height: 1.25;
+                letter-spacing: -0.4px;
+                margin-top: 8px;
+            }
+
+            .hero-meta {
+                margin-top: 10px;
+                font-size: 11px;
+                gap: 7px;
+            }
+
+            /* Side News jadi Kartu Horizontal Rapi di HP */
+            .side-news {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                gap: 10px;
+            }
+
+            .side-card {
+                min-height: auto;
+                display: grid;
+                grid-template-columns: 110px 1fr;
+                background: #ffffff;
+                border-radius: 14px;
+                padding: 9px;
+                gap: 12px;
+                align-items: center;
+                box-shadow: 0 3px 10px rgba(10, 17, 40, 0.04);
+            }
+
+            .side-card::after {
+                display: none;
+            }
+
+            .side-card img {
+                height: 85px;
+                border-radius: 10px;
+            }
+
+            .side-card-content {
+                position: static;
+                padding: 0;
+            }
+
+            .side-card-content .category {
+                background: #f1f5f9;
+                color: var(--navy-dark);
+                font-size: 9px;
+                padding: 3px 7px;
+            }
+
+            .side-card h3 {
+                color: var(--navy-dark);
+                font-size: 14px;
+                line-height: 1.32;
+                margin-top: 5px;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .side-card-meta {
+                color: #64748b;
+                font-size: 10px;
+                margin-top: 5px;
+            }
+
+            /* Trending Bar */
+            .trending {
+                margin: 12px 0 6px;
+            }
+
+            .trending-box {
+                border-radius: 12px;
+            }
+
+            .trending-inner {
+                padding: 9px 12px;
+                gap: 10px;
+            }
+
+            .trending-label {
+                font-size: 9px;
+                padding: 4px 8px;
+            }
+
+            .trending-item {
+                font-size: 12px;
+            }
+
+            /* Section Header */
+            .section {
+                padding: 22px 0;
+            }
+
+            .section-head {
+                margin-bottom: 14px;
+            }
+
+            .section-title .line {
+                height: 20px;
+            }
+
+            .section-title h2 {
+                font-size: 18px;
+            }
+
+            .section-head a {
+                font-size: 11px;
+                padding: 5px 10px;
+            }
+
+            /* News List Card */
+            .news-list {
+                gap: 12px;
+            }
+
+            .news-card {
+                grid-template-columns: 112px 1fr;
+                gap: 12px;
+                padding: 10px;
+                border-radius: 14px;
+            }
+
+            .news-image {
+                height: 98px;
+                border-radius: 10px;
+            }
+
+            .news-info {
+                padding: 0;
+            }
+
+            .news-info .category {
+                font-size: 9px;
+                padding: 3px 7px;
+            }
+
+            .news-info h3 {
+                font-size: 14.5px;
+                line-height: 1.32;
+                margin-top: 5px;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .news-info p {
+                display: none;
+            }
+
+            .news-meta {
+                margin-top: 7px;
+                font-size: 10px;
+                gap: 6px;
+            }
+
+            /* Iklan di Smartphone */
+            .ad-infeed img {
+                height: 75px;
+            }
+
+            .ad-leaderboard img {
+                height: 85px;
+            }
+
+            .ad-sidebar img {
+                height: 220px;
+            }
+
+            /* Sidebar */
+            .sidebar {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .newsletter {
+                grid-column: auto;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form button {
+                padding: 12px;
+                width: 100%;
+            }
+
+            /* Video & Daerah Grid di Smartphone */
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .video-card {
+                display: grid;
+                grid-template-columns: 125px 1fr;
+                align-items: center;
+                padding: 9px;
+                gap: 12px;
+                border-radius: 14px;
+            }
+
+            .video-thumb {
+                height: 88px;
+                border-radius: 10px;
+            }
+
+            .video-thumb.is-video::after {
+                width: 32px;
+                height: 32px;
+                font-size: 11px;
+            }
+
+            .video-content {
+                padding: 0;
+            }
+
+            .video-content h3 {
+                font-size: 14px;
+                line-height: 1.32;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .video-content small {
+                margin-top: 5px;
+                font-size: 10px;
+            }
+
+            /* Footer Smartphone */
+            footer {
+                margin-top: 25px;
+            }
+
+            .footer-main {
+                padding: 32px 0;
+                grid-template-columns: 1fr 1fr;
+                gap: 24px 16px;
+            }
+
+            .footer-brand {
+                grid-column: span 2;
+            }
+
+            .footer-brand .logo-text span {
+                display: block;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 6px;
+                text-align: center;
+                font-size: 11px;
+            }
+        }
+
+        /* Layar Sangat Kecil (< 380px) */
+        @media (max-width: 380px) {
+            .container {
+                width: calc(100% - 22px);
+            }
+
+            .logo-text span {
+                display: none;
+            }
+
+            .news-card,
+            .side-card,
+            .video-card {
+                grid-template-columns: 98px 1fr;
+                gap: 10px;
+            }
+
+            .news-image,
+            .side-card img,
+            .video-thumb {
+                height: 85px;
+            }
+
+            .hero-main {
+                min-height: 290px;
+            }
+
+            .hero-content h1 {
+                font-size: 19px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         TOPBAR
+    ========================== -->
+
+    <div class="topbar">
+        <div class="container topbar-inner">
+
+            <div class="breaking-mini">
+                <span>● LIVE</span>
+                Berita terkini dan terpercaya Indonesia
+            </div>
+
+            <div class="top-social">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">YouTube</a>
+                <a href="#">X</a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <div class="container">
+
+            <div class="navbar">
+
+                <a href="#" class="logo">
+                    <img src="logo.png" alt="Logo LEGALITAS.ID" class="logo-img" onerror="this.style.display='none'">
+                    <div class="logo-text">
+                        <strong>LEGALITAS.ID</strong>
+                        <span>MENGAWAL FAKTA • MENJAGA KEBENARAN</span>
+                    </div>
+                </a>
+
+
+                <nav class="nav-menu">
+                    <a href="#" class="active">Home</a>
+                    <a href="#nasional">Nasional</a>
+                    <a href="#daerah">Daerah</a>
+                    <a href="#politik">Politik</a>
+                    <a href="#ekonomi">Ekonomi</a>
+                    <a href="#hukum">Hukum</a>
+                    <a href="#pendidikan">Pendidikan</a>
+                    <a href="#teknologi">Teknologi</a>
+                    <a href="#sport">Sport</a>
+                </nav>
+
+
+                <div class="nav-actions">
+                    <button class="search-btn" id="searchBtn" aria-label="Cari Berita">
+                        🔍
+                    </button>
+
+                    <button class="menu-btn" id="menuBtn" aria-label="Menu Navigasi">
+                        ☰
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- QUICK SCROLL BAR KHUSUS SMARTPHONE / TABLET -->
+            <div class="mobile-quick-nav">
+                <a href="#" class="active">Terbaru</a>
+                <a href="#nasional">Nasional</a>
+                <a href="#daerah">Daerah</a>
+                <a href="#politik">Politik</a>
+                <a href="#hukum">Hukum</a>
+                <a href="#ekonomi">Ekonomi</a>
+                <a href="#pendidikan">Pendidikan</a>
+                <a href="#teknologi">Teknologi</a>
+                <a href="#sport">Sport</a>
+            </div>
+
+
+            <!-- SEARCH -->
+            <div class="search-box" id="searchBox">
+                <div class="search-inner">
+                    <input
+                        type="text"
+                        placeholder="Cari berita, topik, atau kata kunci..."
+                    >
+                    <button aria-label="Submit Pencarian">🔍</button>
+                </div>
+            </div>
+
+
+            <!-- MOBILE MENU DRAWER -->
+            <div class="mobile-menu" id="mobileMenu">
+                <div class="mobile-menu-inner glass">
+                    <a href="#" class="active">Home</a>
+                    <a href="#nasional">Nasional</a>
+                    <a href="#daerah">Daerah</a>
+                    <a href="#politik">Politik</a>
+                    <a href="#ekonomi">Ekonomi</a>
+                    <a href="#hukum">Hukum</a>
+                    <a href="#pendidikan">Pendidikan</a>
+                    <a href="#teknologi">Teknologi</a>
+                    <a href="#sport">Sport</a>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-grid">
+
+                    <!-- MAIN NEWS -->
+                    <a href="#" class="hero-main">
+                        <img
+                            src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1400&q=85"
+                            alt="Berita utama"
+                        >
+                        <div class="hero-content">
+                            <span class="category">Nasional</span>
+                            <h1>
+                                Perkembangan Terkini Indonesia Menjadi Sorotan Publik Nasional
+                            </h1>
+                            <div class="hero-meta">
+                                <span>Legalitas.ID</span>
+                                <span>•</span>
+                                <span>26 Agustus 2026</span>
+                                <span>•</span>
+                                <span>08:30 WIB</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- SIDE NEWS -->
+                    <div class="side-news">
+
+                        <a href="#" class="side-card">
+                            <img
+                                src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=900&q=80"
+                                alt="Politik"
+                            >
+                            <div class="side-card-content">
+                                <span class="category">Politik</span>
+                                <h3>
+                                    Dinamika Politik Nasional Terus Menjadi Perhatian
+                                </h3>
+                                <div class="side-card-meta">
+                                    1 Jam yang lalu
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="#" class="side-card">
+                            <img
+                                src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80"
+                                alt="Ekonomi"
+                            >
+                            <div class="side-card-content">
+                                <span class="category">Ekonomi</span>
+                                <h3>
+                                    Kebijakan Ekonomi Baru Diproyeksikan Dorong Pertumbuhan
+                                </h3>
+                                <div class="side-card-meta">
+                                    2 Jam yang lalu
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- TRENDING -->
+        <div class="container">
+            <div class="trending">
+                <div class="trending-box">
+                    <div class="trending-inner">
+                        <div class="trending-label">Trending</div>
+                        <div class="trending-item">
+                            Pemerintah • Pendidikan • Politik • Ekonomi • Hukum • Teknologi • Daerah
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- BERITA TERKINI -->
+        <section class="section" id="nasional">
+            <div class="container">
+
+                <div class="section-head">
+                    <div class="section-title">
+                        <div class="line"></div>
+                        <h2>Berita Terkini</h2>
+                    </div>
+                    <a href="#">Lihat Semua →</a>
+                </div>
+
+                <div class="content-grid">
+
+                    <!-- NEWS LIST -->
+                    <div class="news-list">
+
+                        <article class="news-card">
+                            <div class="news-image">
+                                <img
+                                    src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80"
+                                    alt="Berita Nasional"
+                                >
+                            </div>
+                            <div class="news-info">
+                                <span class="category category-light">Nasional</span>
+                                <h3>
+                                    Pemerintah Siapkan Strategi Baru Menghadapi Tantangan Nasional
+                                </h3>
+                                <p>
+                                    Informasi terbaru terkait kebijakan dan perkembangan nasional menjadi perhatian masyarakat.
+                                </p>
+                                <div class="news-meta">
+                                    <span>Legalitas.ID</span>
+                                    <span>•</span>
+                                    <span>26 Agustus 2026</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="news-card">
+                            <div class="news-image">
+                                <img
+                                    src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=800&q=80"
+                                    alt="Berita Hukum"
+                                >
+                            </div>
+                            <div class="news-info">
+                                <span class="category category-light">Hukum</span>
+                                <h3>
+                                    Penegakan Hukum dan Transparansi Menjadi Perhatian Publik
+                                </h3>
+                                <p>
+                                    Berbagai langkah hukum kembali menjadi pembahasan di tengah masyarakat.
+                                </p>
+                                <div class="news-meta">
+                                    <span>Hukum</span>
+                                    <span>•</span>
+                                    <span>3 Jam lalu</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- RUANG IKLAN: IN-FEED BANNER -->
+                        <div class="ad-box ad-infeed">
+                            <span class="ad-badge">Sponsored / Advertisement</span>
+                            <a href="#" target="_blank" rel="noopener" class="ad-link">
+                                <img 
+                                    src="https://placehold.co/800x110/f1f5f9/0a1128?text=RUANG+IKLAN+IN-FEED" 
+                                    alt="Iklan Tengah Berita"
+                                >
+                            </a>
+                        </div>
+
+                        <article class="news-card">
+                            <div class="news-image">
+                                <img
+                                    src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80"
+                                    alt="Berita Pendidikan"
+                                >
+                            </div>
+                            <div class="news-info">
+                                <span class="category category-light">Pendidikan</span>
+                                <h3>
+                                    Transformasi Pendidikan Indonesia Terus Didorong
+                                </h3>
+                                <p>
+                                    Dunia pendidikan terus berkembang seiring dengan perubahan teknologi dan kebutuhan generasi baru.
+                                </p>
+                                <div class="news-meta">
+                                    <span>Pendidikan</span>
+                                    <span>•</span>
+                                    <span>4 Jam lalu</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="news-card">
+                            <div class="news-image">
+                                <img
+                                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+                                    alt="Berita Teknologi"
+                                >
+                            </div>
+                            <div class="news-info">
+                                <span class="category category-light">Teknologi</span>
+                                <h3>
+                                    Perkembangan Teknologi Digital Mengubah Cara Masyarakat Bekerja
+                                </h3>
+                                <p>
+                                    Inovasi teknologi menjadi salah satu faktor penting dalam perkembangan ekonomi digital.
+                                </p>
+                                <div class="news-meta">
+                                    <span>Teknologi</span>
+                                    <span>•</span>
+                                    <span>5 Jam lalu</span>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+
+
+                    <!-- SIDEBAR -->
+                    <aside class="sidebar">
+
+                        <!-- POPULER -->
+                        <div class="widget popular-widget">
+                            <div class="widget-title">
+                                <span></span>
+                                <h3>Berita Terpopuler</h3>
+                            </div>
+
+                            <div class="popular-list">
+                                <a href="#" class="popular-item">
+                                    <div class="popular-number">01</div>
+                                    <div>
+                                        <h4>Perkembangan Politik Nasional Hari Ini</h4>
+                                        <small>12.5K pembaca</small>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="popular-item">
+                                    <div class="popular-number">02</div>
+                                    <div>
+                                        <h4>Kebijakan Ekonomi Baru Mendapat Perhatian</h4>
+                                        <small>9.8K pembaca</small>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="popular-item">
+                                    <div class="popular-number">03</div>
+                                    <div>
+                                        <h4>Berita Pendidikan Terbaru Indonesia</h4>
+                                        <small>8.6K pembaca</small>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="popular-item">
+                                    <div class="popular-number">04</div>
+                                    <div>
+                                        <h4>Penegakan Hukum Jadi Perhatian</h4>
+                                        <small>7.7K pembaca</small>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- RUANG IKLAN: SIDEBAR -->
+                        <div class="ad-box ad-sidebar">
+                            <span class="ad-badge">Advertisement</span>
+                            <a href="#" target="_blank" rel="noopener" class="ad-link">
+                                <img 
+                                    src="https://placehold.co/400x300/f1f5f9/0a1128?text=IKLAN+SIDEBAR" 
+                                    alt="Iklan Sidebar"
+                                >
+                            </a>
+                        </div>
+
+                        <!-- CATEGORY -->
+                        <div class="widget">
+                            <div class="widget-title">
+                                <span></span>
+                                <h3>Kategori Berita</h3>
+                            </div>
+
+                            <div class="category-list">
+                                <a href="#">Nasional</a>
+                                <a href="#">Daerah</a>
+                                <a href="#">Politik</a>
+                                <a href="#">Hukum</a>
+                                <a href="#">Ekonomi</a>
+                                <a href="#">Pendidikan</a>
+                                <a href="#">Teknologi</a>
+                                <a href="#">Sport</a>
+                                <a href="#">Lifestyle</a>
+                                <a href="#">Kesehatan</a>
+                            </div>
+                        </div>
+
+                        <!-- NEWSLETTER -->
+                        <div class="newsletter">
+                            <h3>Dapatkan Berita Terbaru</h3>
+                            <p>
+                                Berlangganan newsletter Legalitas.ID dan dapatkan informasi terbaru langsung di email Anda.
+                            </p>
+                            <form class="newsletter-form">
+                                <input type="email" placeholder="Masukkan email Anda...">
+                                <button type="submit">SUBSCRIBE</button>
+                            </form>
+                        </div>
+
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- VIDEO -->
+        <section class="section">
+            <div class="container">
+
+                <div class="section-head">
+                    <div class="section-title">
+                        <div class="line"></div>
+                        <h2>Video Terbaru</h2>
+                    </div>
+                    <a href="#">Semua Video →</a>
+                </div>
+
+                <div class="video-grid">
+
+                    <article class="video-card">
+                        <div class="video-thumb is-video">
+                            <img
+                                src="https://images.unsplash.com/photo-1589903308904-1010c2294adc?auto=format&fit=crop&w=900&q=80"
+                                alt="Video 1"
+                            >
+                        </div>
+                        <div class="video-content">
+                            <h3>Update Berita Nasional Hari Ini</h3>
+                            <small>10 Menit lalu</small>
+                        </div>
+                    </article>
+
+                    <article class="video-card">
+                        <div class="video-thumb is-video">
+                            <img
+                                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=80"
+                                alt="Video 2"
+                            >
+                        </div>
+                        <div class="video-content">
+                            <h3>Liputan Khusus Legalitas.ID</h3>
+                            <small>1 Jam lalu</small>
+                        </div>
+                    </article>
+
+                    <article class="video-card">
+                        <div class="video-thumb is-video">
+                            <img
+                                src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=900&q=80"
+                                alt="Video 3"
+                            >
+                        </div>
+                        <div class="video-content">
+                            <h3>Wawancara Eksklusif Bersama Narasumber</h3>
+                            <small>3 Jam lalu</small>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- DAERAH -->
+        <section class="section" id="daerah">
+            <div class="container">
+
+                <div class="section-head">
+                    <div class="section-title">
+                        <div class="line"></div>
+                        <h2>Berita Daerah</h2>
+                    </div>
+                    <a href="#">Selengkapnya →</a>
+                </div>
+
+                <div class="video-grid">
+
+                    <article class="video-card">
+                        <div class="video-thumb">
+                            <img
+                                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+                                alt="Daerah 1"
+                            >
+                        </div>
+                        <div class="video-content">
+                            <h3>Kabar Terkini dari Berbagai Daerah Indonesia</h3>
+                            <small>Daerah • 1 Jam lalu</small>
+                        </div>
+                    </article>
+
+                    <article class="video-card">
+                        <div class="video-thumb">
+                            <img
+                                src="https://images.unsplash.com/photo-1465447142348-e9952c393450?auto=format&fit=crop&w=900&q=80"
+                                alt="Daerah 2"
+                            >
+                        </div>
+                        <div class="video-content">
+                            <h3>Pemerintah Daerah Dorong Program Pembangunan</h3>
+                            <small>Daerah • 2 Jam lalu</small>
+                        </div>
+                    </article>
+
+                    <article class="video-card">
+                        <div class="video-thumb">
+                            <img
+                                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80"
+                                alt="Daerah 3"
+                            >
+                        </div>
+                        <div class="video-content">
+                            <h3>Aktivitas Ekonomi Masyarakat Terus Bergerak</h3>
+                            <small>Daerah • 4 Jam lalu</small>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- RUANG IKLAN: BOTTOM BANNER -->
+        <div class="container ad-wrapper">
+            <div class="ad-box ad-leaderboard">
+                <span class="ad-badge">Advertisement</span>
+                <a href="#" target="_blank" rel="noopener" class="ad-link">
+                    <img 
+                        src="https://placehold.co/1200x120/f1f5f9/0a1128?text=RUANG+IKLAN+BAWAH" 
+                        alt="Iklan Banner Bawah"
+                    >
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+        <div class="container">
+
+            <div class="footer-main">
+
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="logo.png" alt="Logo LEGALITAS.ID" class="logo-img" onerror="this.style.display='none'">
+                        <div class="logo-text" style="color:white;">
+                            <strong style="color: #ffffff;">LEGALITAS.ID</strong>
+                            <span>MENGAWAL FAKTA • MENJAGA KEBENARAN</span>
+                        </div>
+                    </div>
+                    <p>
+                        Legalitas.ID adalah media informasi yang hadir untuk menyajikan berita aktual, terpercaya dan berimbang dengan menjunjung tinggi prinsip jurnalistik.
+                    </p>
+                </div>
+
+                <div>
+                    <div class="footer-title">MENU</div>
+                    <div class="footer-links">
+                        <a href="#">Home</a>
+                        <a href="#">Nasional</a>
+                        <a href="#">Daerah</a>
+                        <a href="#">Politik</a>
+                        <a href="#">Ekonomi</a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="footer-title">INFORMASI</div>
+                    <div class="footer-links">
+                        <a href="#">Tentang Kami</a>
+                        <a href="#">Redaksi</a>
+                        <a href="#">Kode Etik</a>
+                        <a href="#">Pedoman Media Siber</a>
+                        <a href="#">Kontak</a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="footer-title">KONTAK</div>
+                    <div class="footer-links">
+                        <a href="#">redaksi@legalitas.id</a>
+                        <a href="#">0850-0000-0000</a>
+                        <a href="#">Indonesia</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2026 Legalitas.ID. All Rights Reserved.</div>
+                <div>Mengawal Fakta, Menjaga Kebenaran.</div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">↑</button>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+        // SEARCH TOGGLE
+        const searchBtn = document.getElementById("searchBtn");
+        const searchBox = document.getElementById("searchBox");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const menuBtn = document.getElementById("menuBtn");
+
+        searchBtn.addEventListener("click", function () {
+            mobileMenu.classList.remove("show");
+            menuBtn.innerHTML = "☰";
+            searchBox.classList.toggle("show");
+            if (searchBox.classList.contains("show")) {
+                searchBox.querySelector("input").focus();
+            }
+        });
+
+        // MOBILE MENU TOGGLE
+        menuBtn.addEventListener("click", function () {
+            searchBox.classList.remove("show");
+            mobileMenu.classList.toggle("show");
+            menuBtn.innerHTML = mobileMenu.classList.contains("show") ? "✕" : "☰";
+        });
+
+        // CLOSE MOBILE MENU ON LINK CLICK
+        document.querySelectorAll(".mobile-menu a").forEach(link => {
+            link.addEventListener("click", function () {
+                mobileMenu.classList.remove("show");
+                menuBtn.innerHTML = "☰";
+            });
+        });
+
+        // NEWSLETTER SUBMIT
+        const newsletter = document.querySelector(".newsletter-form");
+        newsletter.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const email = this.querySelector("input").value.trim();
+            if (!email) {
+                alert("Silakan masukkan email Anda.");
+                return;
+            }
+            alert("Terima kasih! Email Anda berhasil didaftarkan.");
+            this.reset();
+        });
+
+        // SEARCH ENTER
+        const searchInput = document.querySelector(".search-inner input");
+        searchInput.addEventListener("keypress", function (e) {
+            if (e.key === "Enter") {
+                const keyword = this.value.trim();
+                if (!keyword) {
+                    alert("Masukkan kata kunci pencarian.");
+                    return;
+                }
+                alert("Mencari berita: " + keyword);
+            }
+        });
+
+        // BACK TO TOP VISIBILITY
+        const backToTop = document.getElementById("backToTop");
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 400) {
+                backToTop.classList.add("visible");
+            } else {
+                backToTop.classList.remove("visible");
+            }
+        });
+
+        backToTop.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+</body>
+</html>
